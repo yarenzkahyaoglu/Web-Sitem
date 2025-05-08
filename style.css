@@ -1,0 +1,71 @@
+/* Genel yazı fontları ve renkler */
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #ffffff;
+  color: #333;
+}
+
+/* Başlık fontu */
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+/* Alt başlık stili */
+.lead {
+  font-size: 1.25rem;
+  color: #555;
+}
+
+/* Buton stilleri */
+.btn-dark {
+  border-radius: 30px;
+  padding: 10px 30px;
+}
+
+/* Navbar ayarları */
+.navbar {
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* CV sayfası için alt başlık */
+.section-title {
+  font-weight: 600;
+  margin-top: 2rem;
+}
+
+/* Liste biçimi */
+ul {
+  padding-left: 1.2rem;
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #343a40;
+}
+
+.section-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  margin-top: 2rem;
+  color: #495057;
+}
+
+.about-text, .family-text {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #555;
+}
+
+.hobby-list {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.1rem;
+  list-style-type: square;
+  padding-left: 1.5rem;
+  color: #333;
+}

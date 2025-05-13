@@ -3,6 +3,16 @@ body {
   font-family: 'Open Sans', sans-serif;
   background-color: #ffffff;
   color: #333;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Sayfa içeriğini ortalamak için */
+.ozgecmis {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 /* Başlık fontu */
@@ -10,6 +20,7 @@ h1 {
   font-family: 'Playfair Display', serif;
   font-size: 3rem;
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 /* Alt başlık stili */
@@ -33,17 +44,10 @@ h1 {
 
 /* CV sayfası için alt başlık */
 .section-title {
-  font-weight: 600;
-  margin-top: 2rem;
-}
-
-/* Liste biçimi */
-ul {
-  padding-left: 1.2rem;
-}
-.section-title {
   font-family: 'Playfair Display', serif;
+  font-weight: 600;
   font-size: 2.5rem;
+  margin-top: 2rem;
   margin-bottom: 1rem;
   color: #343a40;
 }
@@ -56,16 +60,107 @@ ul {
 }
 
 .about-text, .family-text {
-  font-family: 'Open Sans', sans-serif;
   font-size: 1.1rem;
   line-height: 1.7;
   color: #555;
 }
 
 .hobby-list {
-  font-family: 'Open Sans', sans-serif;
   font-size: 1.1rem;
   list-style-type: square;
   padding-left: 1.5rem;
   color: #333;
+}
+
+/* Liste biçimi */
+ul {
+  padding-left: 1.2rem;
+}
+
+/* Eğitim Başlığı */
+.education h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.education h1:after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background:#ddabe7;
+  margin: 15px auto;
+}
+
+/* Zaman Çizelgesi */
+.timeline {
+  position: relative;
+  padding-left: 60px;
+}
+
+.timeline:before {
+  content: "";
+  position: absolute;
+  left: 30px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #ddabe7;
+}
+
+/* Yıl İşaretçileri */
+.year {
+  background: #ddabe7;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 15px;
+  position: relative;
+  left: -45px;
+  font-weight: bold;
+}
+
+/* Eğitim Girişleri */
+.entry {
+  background: white;
+  padding: 20px;
+  margin-bottom: 40px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.entry:before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 20px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid white;
+}
+
+.entry h2 {
+  color: #2c3e50;
+  margin-top: 0;
+}
+
+/* Mobil Uyumluluk */
+@media (max-width: 600px) {
+  .timeline {
+    padding-left: 40px;
+  }
+
+  .timeline:before {
+    left: 20px;
+  }
+
+  .year {
+    left: -30px;
+  }
 }

@@ -10,10 +10,11 @@
 
 body {
   font-family: 'Open Sans', sans-serif;
-  background-color: #bad0ff;
+  background-color: #4d5b79;
   color: #333;
   line-height: 1.6;
   font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 /* ==================== */
@@ -37,14 +38,6 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
   color: #212529;
   margin-bottom: 15px;
-}
-
-/* ==================== */
-/* Paragraflar */
-/* ==================== */
-p {
-  margin-bottom: 15px;
-  color: #495057;
 }
 
 /* ==================== */
@@ -72,7 +65,7 @@ button {
 }
 
 button:hover {
-  background-color:#9f579c;
+  background-color:#0c4176;
 }
 
 /* ==================== */
@@ -97,9 +90,8 @@ button:hover {
     padding: 8px 16px;
   }
 }
-/* =========================================== */
-/* === ANASAYFA / HAKKIMDA SAYFASI STİLLERİ === */
-/* =========================================== */
+
+/* === HAKKIMDA SAYFASI STİLLERİ === */
 
 /* Profil Fotoğrafı */
 .profile-img {
@@ -109,6 +101,11 @@ button:hover {
   object-fit: cover;
   margin-top: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+ transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.05);
 }
 
 /* Yazı yazıyormuş gibi animasyon */
@@ -138,12 +135,16 @@ button:hover {
 
 /* Hakkımda bölümü */
 #hakkimda {
-  background-color:  #bad0ff;
+  background-color:  #e9ebf1;
   padding: 40px 20px;
-  border-radius: 10px;
+  border-radius: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+   animation: fadeIn 1s ease-in;
 }
-
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 /* Bölüm başlığı */
 .section-title {
   font-size: 2rem;
@@ -151,8 +152,18 @@ button:hover {
   color: #000000;
   margin-bottom: 20px;
   text-align: center;
+  position: relative;
 }
+.section-title::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 4px;
+  background-color: #2f353d;
+  margin: 10px auto 0;
+  border-radius: 2px;
 
+}
 /* Alt başlıklar */
 .section-subtitle {
   font-size: 1.5rem;
@@ -160,6 +171,23 @@ button:hover {
   color: #343a40;
   margin-top: 30px;
   margin-bottom: 10px;
+}
+
+.button-custom {
+  background-color: #343a40;
+  border: none;
+  padding: 12px 18px;
+  margin: 5px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-align: center;
+}
+
+.button-custom:hover {
+  background-color: #40587d;
+  transform: translateY(-10px);
 }
 
 /* Açıklama metinleri */
@@ -180,9 +208,10 @@ button:hover {
 .hobby-list li {
   margin-bottom: 8px;
 }
-/* ============================================ */
+
+
+
 /* === ÖZ GEÇMİŞ SAYFASI – ZAMAN ÇİZELGESİ ===== */
-/* ============================================ */
 
 .ozgecmis {
   padding: 50px 20px;
@@ -192,7 +221,7 @@ button:hover {
 
 .ozgecmis h1 {
   font-size: 2.5rem;
-  color: #f39bf0;
+  color:  #060005;
   margin-bottom: 40px;
   font-weight: bold;
 }
@@ -213,7 +242,7 @@ button:hover {
   top: 0;
   bottom: 0;
   width: 4px;
-  background: #f39bf0;
+  background:  #f3d1f2;
   transform: translateX(-50%);
 }
 
@@ -240,7 +269,7 @@ button:hover {
 .timeline-year {
   font-size: 1.2rem;
   font-weight: bold;
-  color: #f39bf0;
+  color:  #f3d1f2;
   margin-bottom: 5px;
 }
 
@@ -258,16 +287,17 @@ button:hover {
 .timeline-item::after {
   content: '';
   position: absolute;
-  top: 20px;
+  top: 50%; /* Dikeyde ortalamak için */
   left: 100%;
-  transform: translateX(-50%);
-  width: 16px;
-  height: 16px;
-  background: #f39bf0;
+  transform: translate(-50%, -50%); /* Hem x hem y ekseninde ortalamak için */
+  width: 1em; /* Yazı boyutuna göre orantılı */
+  height: 1em; /* Yazı boyutuna göre orantılı */
+  min-width: 16px; /* Minimum boyut */
+  min-height: 16px; /* Minimum boyut */
+  background: #f3d1f2;
   border-radius: 50%;
   z-index: 1;
 }
-
 .timeline-item:nth-child(even)::after {
   left: 0%;
   transform: translateX(-50%);
@@ -290,12 +320,15 @@ button:hover {
   }
 }
 
-
+/* SLIDER */
 
 .slider-container {
   position: relative;
   height: 100vh;
   overflow: hidden;
+  border: 3px solid rgba(16, 94, 56, 0.982);
+  border-radius: 10px;
+  box-sizing: border-box; 
 }
 
 .slider {
@@ -341,11 +374,122 @@ button:hover {
   color: #f1f1f1;
 }
 
+.section-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+/* Başlık Kutusu */
+.section-title-box {
+  background: linear-gradient(135deg, rgba(86, 104, 64, 0.9) 0%, rgba(3, 133, 64, 0.85) 100%);
+  color: white;
+  padding: 20px 30px;
+  border-radius: 12px;
+  display: inline-block;
+  margin: 0;
+  width: 100%; /* Tüm genişliği kaplasın */
+  box-sizing: border-box;
+  box-shadow: 
+    0 4px 15px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: all 0.3s ease;
+}
+.section-title-box h1 {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+/* Alt başlık çizgisi */
+.section-title-box h2 {
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+  padding-bottom: 10px;
+  margin-top: 15px;
+}
+/* Arka plan efekti */
+.section-title-box::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  transform: rotate(30deg);
+}
+
+/* Başlık Stili */
+.section-title-box h1, 
+.section-title-box h2 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+/* Alt Başlık Stili */
+.section-title-box p {
+  margin: 8px 0 0;
+  font-size: 1.1rem;
+  opacity: 0.9;
+  font-weight: 300;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover Efekti */
+.section-title-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 
+    0 6px 20px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+}
+
+/* Alt Başlıklar için (h2) */
+h2 {
+  position: relative;
+  padding-left: 15px;
+  margin-top: 30px;
+}
+
+h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 80%;
+  width: 4px;
+  background: #fff8f8;
+  border-radius: 2px;
+}
+
+.section-title-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+
 @media (max-width: 768px) {
   .slider-content h1 {
     font-size: 2rem;
   }
+  .section-title-box h1 {
+    font-size: 1.7rem;
+  }
   .slider-content p {
+    font-size: 1rem;
+  }
+  .section-title-box {
+    padding: 15px 20px;
+  }
+  .section-title-box p {
     font-size: 1rem;
   }
 }

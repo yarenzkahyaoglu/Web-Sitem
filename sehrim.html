@@ -5,28 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Şehrim</title>
     <link rel="stylesheet" href="style.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
   <!-- ÜST KISIM -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="#">ŞEHRİM</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="hakkimda.html">Hakkımda</a></li>
-          <li class="nav-item"><a class="nav-link" href="ozgecmis.html">Öz Geçmiş</a></li>
-          <li class="nav-item"><a class="nav-link" href="ilgialanlarim.html">İlgi Alanlarım</a></li>
-          <li class="nav-item"><a class="nav-link active" href="#">Şehrim</a></li>
-          <li class="nav-item"><a class="nav-link" href="mirasimiz.html">Mirasımız</a></li>
-          <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
-        </ul>
-      </div>
+   <nav class="navbar">
+    <div class="navbar-container">
+      <a class="navbar-brand" href="#">ŞEHRİM</a>
+      <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+      <ul class="navbar-menu" id="navbar-menu">
+        <li><a href="hakkimda.html">Hakkımda</a></li>
+        <li><a href="ozgecmis.html">Öz Geçmiş</a></li>
+        <li><a href="ilgialanlarim.html">İlgi Alanlarım</a></li>
+        <li><a class="active" href="#">Şehrim</a></li>
+        <li><a href="mirasimiz.html">Mirasımız</a></li>
+        <li><a href="iletisim.html">İletişim</a></li>
+      </ul>
     </div>
-    </nav>
+  </nav>
 
 <!-- SLIDER -->
   <div class="slider-container">
@@ -101,25 +96,7 @@
     </div>
 </div>
 </div>
- <script>
-  // Otomatik geçiş
-  let index = 0;
-  const slides = document.querySelectorAll('.slide');
-  setInterval(() => {
-    slides.forEach((slide, i) => {
-      slide.style.opacity = i === index ? '1' : '0';
-    });
-    index = (index + 1) % slides.length;
-  }, 4000);
 
-  // Smooth scroll fonksiyonu
-  function scrollToSection(id) {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
-</script>
-
+   <script src="script.js"></script>
 </body>
 </html>

@@ -4,7 +4,7 @@ document.getElementById("menu-toggle").addEventListener("click", function () {
   menu.classList.toggle("show");
 });
 
-// Aile Üyeleri
+// AİLE ÜYELERİ KISMI
   const familyData = {
     mother: {
       name: "Esin Kahyaoğlu (Annem)",
@@ -60,7 +60,7 @@ document.getElementById("menu-toggle").addEventListener("click", function () {
   });
 
 
-// Arkadaşlar
+// ARKADAŞLAR KISMI
 const friends = {
   iclal: {
     name: "İclal Yıldırım",
@@ -98,22 +98,22 @@ window.onclick = function(event) {
 }
 
 
+const slider = document.getElementById('slider');
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+    let currentIndex = 0;
 
-//slide için
- // Otomatik geçiş
-  let index = 0;
-  const slides = document.querySelectorAll('.slide');
-  setInterval(() => {
-    slides.forEach((slide, i) => {
-      slide.style.opacity = i === index ? '1' : '0';
-    });
-    index = (index + 1) % slides.length;
-  }, 4000);
-
-  // Smooth scroll fonksiyonu
-  function scrollToSection(id) {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+    function updateSlider() {
+      const offset = -currentIndex * 100;
+      slider.style.transform = 'translateX(${offset}%)';
     }
-  }
+
+    document.querySelector('.next-btn').addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % totalSlides;
+      updateSlider();
+    });
+
+    document.querySelector('.prev-btn').addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+      updateSlider();
+    });

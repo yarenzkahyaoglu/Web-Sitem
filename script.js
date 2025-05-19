@@ -98,22 +98,4 @@ window.onclick = function(event) {
 }
 
 
-const slider = document.getElementById('slider');
-    const slides = document.querySelectorAll('.slide');
-    const totalSlides = slides.length;
-    let currentIndex = 0;
-
-    function updateSlider() {
-      const offset = -currentIndex * 100;
-      slider.style.transform = 'translateX(${offset}%)';
-    }
-
-    document.querySelector('.next-btn').addEventListener('click', () => {
-      currentIndex = (currentIndex + 1) % totalSlides;
-      updateSlider();
-    });
-
-    document.querySelector('.prev-btn').addEventListener('click', () => {
-      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-      updateSlider();
-    });
+function playAudio() { document.getElementById("historyAudio").play(); }

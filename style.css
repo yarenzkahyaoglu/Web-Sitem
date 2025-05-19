@@ -670,13 +670,13 @@ body {
 .timeline-item::after {
   content: '';
   position: absolute;
-  top: 50%; /* Dikeyde ortalamak için */
+  top: 50%;
   left: 100%;
-  transform: translate(-50%, -50%); /* Hem x hem y ekseninde ortalamak için */
-  width: 1em; /* Yazı boyutuna göre orantılı */
-  height: 1em; /* Yazı boyutuna göre orantılı */
-  min-width: 16px; /* Minimum boyut */
-  min-height: 16px; /* Minimum boyut */
+  transform: translate(-50%, -50%);
+  width: 1em; 
+  height: 1em; 
+  min-width: 16px;
+  min-height: 16px; 
   background: #082470;
   border-radius: 50%;
   z-index: 1;
@@ -806,65 +806,178 @@ body {
 
 
 .slider-container {
-      position: relative;
-      width: 90%;
-      max-width: 900px;
-      margin: 50px auto;
-      overflow: hidden;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    }
+  position: relative;
+  width: 90%;
+  max-width: 900px;
+  margin: 40px auto;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
 
-.slider-wrapper {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-    }
+input[type="radio"] {
+  display: none;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.6s ease;
+
+}
 
 .slide {
-      flex-shrink: 0;
-      width: 100%;
-      height: 300px;
-      background-size: cover;
-      background-position: center;
-    }
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
+  position: relative;
+  cursor: pointer;
+}
+.slide-img-title {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font-size: 20px;
+  color: white;
+  background: rgba(0,0,0,0.5);
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.main-title {
+  text-align: center;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.main-title h1 {
+  font-size: 3em;
+  color: #222;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  margin-bottom: 7px;
+}
+
+.slide-title {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  font-family: 'Segoe UI', sans-serif;
+}
+.slide-title h2 {
+  font-size: 10px;
+  color: #444;
+  margin-bottom: 4px;
+}
+
+.slide-title p {
+  font-style: italic;
+  color: #555;
+  font-size: 1em;
+}
+
+#slide1:checked ~ .slides {
+  transform: translateX(0%);
+}
+#slide2:checked ~ .slides {
+  transform: translateX(-100%);
+}
+#slide3:checked ~ .slides {
+  transform: translateX(-200%);
+}
+#slide4:checked ~ .slides {
+  transform: translateX(-300%);
+}
+#slide5:checked ~ .slides {
+  transform: translateX(-400%);
+}
+
+/* Navigation Buttons (Dot Style) */
+.navigation {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
 
 .nav-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(255, 255, 255, 0.8);
-      border: none;
-      font-size: 30px;
-      padding: 10px;
-      cursor: pointer;
-      border-radius: 50%;
-      z-index: 2;
-      transition: background 0.3s;
-    }
+  width: 15px;
+  height: 15px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+  border: 2px solid #999;
+}
 
 .nav-btn:hover {
-      background: white;
-    }
+  background: #999;
+}
 
-.prev-btn {
-      left: 15px;
-    }
-
-.next-btn {
-      right: 15px;
-    }
-
-@media (max-width: 600px) {
-      .slide {
-        height: 200px;
-      }
-      .nav-btn {
-        font-size: 24px;
-        padding: 8px;
-      }
-    }
+.info-section {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #f5f5f5;
+  border-top: 1px solid #ccc;
+}
 
 
+@media (max-width: 768px) {
+  .slide {
+    height: 250px;
+  }
+
+  .nav-btn {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slide {
+    height: 180px;
+  }
+
+  .nav-btn {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+.nufus-buton {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .nufus-buton:hover {
+            background-color: #45a049; 
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+        
+      .giresun-tarihi-dinleme{
+        background: #063b0b;
+        color: white;
+        padding:10px;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        margin: 10px;
+
+}
 
 
 #galeri {

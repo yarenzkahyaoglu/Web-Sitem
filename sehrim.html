@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,15 +24,134 @@
     </div>
   </nav>
 
-<div class="slider-container">
-    <button class="nav-btn prev-btn">&#10094;</button>
-    <div class="slider-wrapper" id="slider">
-      <div class="slide" style="background-image: url('sehrim/1.jpg');"></div>
-      <div class="slide" style="background-image: url('sehrim/deniz.jpeg');"></div>
-      <div class="slide" style="background-image: url('sehrim/kale.jpg');"></div>
-    </div>
-    <button class="nav-btn next-btn">&#10095;</button>
+
+
+   <div class="main-title">
+  <h1>ŞEHRİM</h1>
   </div>
+
+<div class="slider-container">
+  <!-- Radio Buttons for Navigation -->
+  <input type="radio" name="slider" id="slide1" checked>
+  <input type="radio" name="slider" id="slide2">
+  <input type="radio" name="slider" id="slide3">
+  <input type="radio" name="slider" id="slide4">
+   <input type="radio" name="slider" id="slide5">
+
+  <!-- Slides Wrapper -->
+  <div class="slides">
+    <div class="slide s1" style="background-image: url('sehrim/kale.jpg');" onclick="location.href='#giresun-info'">
+      <div class="slide-img-title">Giresun'u Keşfet</div>
+    </div>
+    <div class="slide s2" style="background-image: url('sehrim/giresun.jpg');" onclick="location.href='#eski-info'">
+      <div class="slide-img-title">Giresun'un Tarihi</div>
+    </div>
+    <div class="slide s3" style="background-image: url('sehrim/ada.jpeg');" onclick="location.href='#dogal-info'">
+      <div class="slide-img-title">Doğal Güzellikleri</div>
+    </div>
+    <div class="slide s4" style="background-image: url('sehrim/muze.jpeg');" onclick="location.href='#tarihi-info'">
+      <div class="slide-img-title">Tarihi Güzellikleri</div>
+      </div>
+    <div class="slide s5" style="background-image: url('sehrim/findik.jpg');" onclick="location.href='#meshur-info'">
+      <div class="slide-img-title">Neyi Meşhur?</div>
+    </div>
+  </div>
+
+  <!-- Manual Navigation Labels -->
+  <div class="navigation">
+    <label for="slide1" class="nav-btn"></label>
+    <label for="slide2" class="nav-btn"></label>
+    <label for="slide3" class="nav-btn"></label>
+    <label for="slide4" class="nav-btn"></label>
+    <label for="slide5" class="nav-btn"></label>
+  </div>
+</div>
+
+
+<div class="slide-title">
+  <h3>Giresun</h3>
+  <p>Yeşil ve mavinin buluştuğu yer.</p>
+</div>
+
+
+
+<div id="giresun-info" class="info-section">
+  <h2>Giresun</h2>
+  <p>Giresun, Karadeniz’in incisi olarak bilinen, yeşilin ve mavinin kucaklaştığı eşsiz bir şehirdir.
+    Karadeniz'e kıyısı olan Giresun doğudan batıya Trabzon, Gümüşhane, Erzincan, Sivas ve Ordu illeriyle çevrilidir.
+    Tarihi ve kültürel zenginlikleriyle dikkat çeken Giresun, doğal güzellikleriyle de ziyaretçilerini büyüler.
+    Fındık üretimiyle ünlü olan şehir, aynı zamanda Türkiye'nin Karadeniz'deki tek adasına ev sahipliği yapmaktadır.
+    Kirazın bütün dünyaya buradan yayıldığı kabul edilir.
+    Giresun'un trafik numarası 28'dir. Yerli halkın çoğunluğunu Çepniler oluşturur.</p>
+    
+    <a href="https://www.nvi.gov.tr/Giresun" target="_blank" class="nufus-buton" 
+   title="Detaylı bilgi için tıklayınız">
+    Giresun Nüfus: 455.922
+</a>
+</div>
+
+<div id="eski-info" class="info-section">
+  <h2>Giresun Tarihi</h2>
+  <p>Giresun, bir Miletos kolonisi olarak kurulmuştur.
+Giresun, 1397 yılında Türkmen beyi Emir Oğlu Süleyman Bey tarafından
+fethedilerek Türk yurdu haline getirilmiş olup, Eski Türklerde adı Vilayet-i Çepni'dir.
+Vilayet-i Çepni güneyde Gümüşhane/Koyulhisar, Gürgentepe; doğuda Beşikdüzü Abdal Musa (Sis) dağının etekleri,
+Kürtün hattı iç kesimlere yayılan bölgedir.
+Türkmen boylarından olan Çepnilerin buraya Horasan'dan tarihi İpek Yolu'nun Gümüşhane,
+Kürtün civarındaki gümüş madenlerinin ve limanların güvenliğini sağlamak üzere gönderilmiş olabileceği belirtilmektedir.
+Giresun merkezi, 1397 yılından bu yana düşman işgali görmemiştir.
+Giresun ili 1920 yılına kadar Trabzon iline bağlı kalmış, bu tarihte müstakil sancak, 1923 yılında ise il olmuştur.
+1923 yılında Giresun ili; merkez, Tirebolu ve Görele ilçesi ile bunlara bağlı Bulancak, Keşap ve Espiye bucaklarından ibaretti.
+1933 yılında Şebinkarahisar'ın illiğinin kaldırılması ile Şebinkarahisar ve Alucra ilçeleri de Giresun'a bağlanmıştır.
+1934 yılında Bulancak, 1945 yılında Keşap, 1957 yılında Espiye, 1958 yılında Dereli, 1960 yılında Eynesil, 1987 yılında Piraziz
+ve Yağlıdere, 1992 yılında Çanakçı,
+Güce, Doğankent ve Çamoluk ilçelerinin kurulması ile ilçe sayısı 16 olmuştur.</p>
+
+
+<button class="giresun-tarihi-dinleme" onclick="playAudio()">
+  🔊
+</button>
+<audio id="historyAudio" src="giresun_tarihi.mp3"></audio>
+
+
+<button onclick="showLegend()" 
+        style="background: #055b29; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; margin: 10px 0;">
+   🧙‍♂️ Giresun'un Kurtarıcı: Topal Osman
+</button>
+
+<div id="legendPopup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.3); z-index: 1000; max-width: 500px;">
+   <h3>Topal Osman Kimdir?</h3>
+   <p>Topal Osman veya Hacı Topal Osman Ağa (d. 1883, Giresun - ö. 2 Nisan 1923, Ankara), Kurtuluş Savaşı'nda Doğu Karadeniz'de faaliyet gösteren mahallî milis güçlerinin reisi ve muhafız taburu komutanı.
+
+    Gazi Mustafa Kemal Paşa'nın Giresunlulardan oluşan muhafız kıtasının komutanıdır.
+    Kurtuluş Savaşı'nda yararlıklar göstermiş, 1923'te Trabzon Mebusu Ali Şükrü Bey cinayetinin azmettiricisi olduğuna
+    karar verilince hakkında tutuklama emri verildi.
+    Çıkan çatışmalarda yaralı olarak ele geçirilmiş ancak İsmail Hakkı Tekçe
+  tarafından başı gövdesinden ayrılmak suretiyle öldürülmüştür.</p>
+   <button onclick="hideLegend()" style="background: #5e0a04; color: white; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer; margin-top: 10px;">Kapat</button>
+</div>
+
+<script>
+function showLegend() { document.getElementById("legendPopup").style.display = "block"; }
+function hideLegend() { document.getElementById("legendPopup").style.display = "none"; }
+</script>
+
+</div>
+
+<div id="dogal-info" class="info-section">
+  <h2>Doğal Güzellikleri</h2>
+  <p>Türkiye’nin Karadeniz’deki tek adası olan Giresun Adası, tarihi ve doğal güzellikleriyle dikkat çeker.</p>
+</div>
+
+<div id="tarihi-info" class="info-section">
+  <h2>Tarihi Güzellikleri</h2>
+  <p>Şehrin merkezinde yer alan kale, muhteşem manzarasıyla ziyaretçileri kendine hayran bırakır.</p>
+</div>
+
+<div id="meshur-info" class="info-section">
+  <h2>Neyi Meşhur?</h2>
+  <p>Şehrin merkezinde yer alan kale, muhteşem manzarasıyla ziyaretçileri kendine hayran bırakır.</p>
+</div>
 
 <script src="script.js"></script>
 </body>

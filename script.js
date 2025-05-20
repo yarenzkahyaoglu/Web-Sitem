@@ -97,5 +97,10 @@ window.onclick = function(event) {
   }
 }
 
-
+//dinleme için 
 function playAudio() { document.getElementById("historyAudio").play(); }
+
+//kahraman kısmı
+function showLegend() { document.getElementById("legendPopup").style.display = "block"; }
+function hideLegend() { document.getElementById("legendPopup").style.display = "none"; }
+

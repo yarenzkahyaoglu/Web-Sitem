@@ -19,10 +19,87 @@
         <li><a href="sehrim.html">Şehrim</a></li>
         <li><a href="mirasimiz.html">Mirasımız</a></li>
         <li><a href="iletisim.html">İletişim</a></li>
+          <li><a href="giris.html">Giriş Yap</a></li>
       </ul>
     </div>
   </nav>
 
+  <style>
+  
+  
+
+    .film-listesi { display: flex; flex-wrap: wrap; gap: 15px; }
+    .film {
+      border: 1px solid #0077cc;
+      border-radius: 8px;
+      padding: 10px;
+      width: 200px;
+      background: #e6f0ff;
+      text-align: center;
+    }
+    .film img { width: 100%; border-radius: 5px; }
+    .film h3 { font-size: 18px; margin: 10px 0 5px; }
+    .film p { font-size: 14px; margin: 0; }
+  </style>
+</head>
+<body>
+
+<h1>En Sevdiğim Filmler</h1>
+<div id="filmListesi" class="film-listesi"></div>
+
+
+<script>
+const apiKey = 'a5ccea51d7ced723ac05a719fda5a8b2'; 
+
+
+const filmIDleri = [
+  // Harry Potter Serisi
+  671,       // Philosopher's Stone
+  672,       // Chamber of Secrets
+  673,       // Prisoner of Azkaban
+  674,       // Goblet of Fire
+  675,       // Order of the Phoenix
+  767,       // Half-Blood Prince
+  12444,     // Deathly Hallows Part 1
+  12445,     // Deathly Hallows Part 2
+
+  // Marvel Filmleri
+  299534,    // Avengers: Endgame
+  299536,    // Avengers: Infinity War
+  24428,     // The Avengers
+
+  // IMDb/puanı yüksek filmler
+ 
+  155,       // The Dark Knight
+  27205,     // Inception
+  157336     // Interstellar
+];
+
+const filmListesiDiv = document.getElementById('filmListesi');
+
+filmIDleri.forEach(id => {
+  fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=tr-TR`)
+    .then(response => response.json())
+    .then(film => {
+      const filmDiv = document.createElement('div');
+      filmDiv.className = 'film';
+
+      filmDiv.innerHTML = `
+        <img src="https://image.tmdb.org/t/p/w300${film.poster_path}" alt="${film.title}" />
+        <h3>${film.title}</h3>
+        <p><strong>Yıl:</strong> ${film.release_date?.substring(0,4)}</p>
+        <p><strong>Puan:</strong> ${film.vote_average}</p>
+        <p>${film.overview?.substring(0, 100)}...</p>
+      `;
+
+      filmListesiDiv.appendChild(filmDiv);
+    })
+    .catch(err => {
+      console.error('Film bilgisi yüklenirken hata:', err);
+    });
+});
+</script>
+  
    <script src="script.js"></script>
 </body>
 </html>

@@ -967,7 +967,7 @@ input[type="radio"] {
   }
   
   .inline-link:hover {
-    color: #0e3a5e;
+    color: #9fc2e0;
     text-decoration: underline;
     background-color: #f0f8ff;
     padding: 2px 4px;
@@ -1060,7 +1060,7 @@ input[type="radio"] {
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    z-index: 1000;
+    z-index: 10000000;
     max-width: 600px;
     width: 90%;
     animation: fadeIn 0.3s;
@@ -1343,4 +1343,392 @@ input[type="radio"] {
   transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
+
+
+
+
+#mirasimiz-header {
+    background: linear-gradient(to right, #2d3e50, #485563);
+    color: #fff;
+    text-align: center;
+    padding: 2rem 1rem;
+    border-bottom: 4px solid #a3c9a8;
+}
+
+#mirasimiz-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+#mirasimiz-header p {
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+    opacity: 0.85;
+}
+
+/* ANA İÇERİK - KALE GENEL BÖLÜM */
+.mirasimiz-kale {
+    max-width: 900px;
+    margin: 3rem auto;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.mirasimiz-kale h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+.mirasimiz-kale img {
+    width: 100%;
+    max-height: 450px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.mirasimiz-kale p {
+    font-size: 1.1rem;
+    color: #444;
+}
+
+/* ALT LİNK */
+main > p {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1.1rem;
+    padding: 0 1rem;
+}
+
+.mirasimiz-link {
+    color: #2c7a7b;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 2px solid transparent;
+    transition: 0.3s ease;
+}
+
+.mirasimiz-link:hover {
+    border-color: #2c7a7b;
+}
+
+
+
+
+
+
+/* KALE BÖLÜMLERİ */
+.kale-bolum {
+    max-width: 900px;
+    margin: 2rem auto;
+    background-color: #ffffff;
+    padding: 1.5rem 2rem;
+    border-left: 5px solid #a3c9a8;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.kale-bolum-baslik {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: #2d3e50;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.kale-alt-baslik {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    font-weight: bold;
+  
+    color: #2d3e50;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.kale-bolum-baslik::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 50px;
+    height: 3px;
+    background-color: #a3c9a8;
+    border-radius: 2px;
+}
+
+
+.kale-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 sütun */
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.kale-kart {
+  background-color: #f9f9f9;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.kale-kart:hover {
+  transform: scale(1.02);
+}
+
+.kale-kart img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* ✅ Responsive yapı: Tablet ve altı için */
+@media (max-width: 768px) {
+  .kale-grid {
+    grid-template-columns: 1fr; /* Mobilde tek sütun */
+  }
+}
+
+
+
+
+.mimari-liste {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1rem;
+}
+
+.mimari-liste li {
+    position: relative;
+    padding-left: 1.8rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.05rem;
+    color: #444;
+    line-height: 1.5;
+}
+
+.mimari-liste li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+
+.tarih-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    padding-left: 1rem;
+    border-left: 3px solid #2c3e50;
+    position: relative;
+}
+
+.tarih-kart {
+    position: relative;
+    background: #f9f9f9;
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    margin-left: 1rem;
+    margin-bottom: 10px;
+}
+
+.tarih-kart::before {
+    content: '';
+    position: absolute;
+    left: -1.2rem;
+    top: 1rem;
+    width: 14px;
+    height: 14px;
+    background: #3498db;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 0 0 2px #2c3e50;
+}
+.tarih-kart-baslik {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #34495e;
+    font-style: italic;
+    padding: 0.75rem 1rem;
+
+    margin: 1.5rem 0 1rem 0.5rem;
+}
+
+.tarih-yil {
+    font-weight: bold;
+    color: #2c3e50;
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+@media (max-width: 600px) {
+    .tarih-timeline {
+        padding-left: 0.5rem;
+        border-left: 2px solid #ccc;
+    }
+
+    .tarih-kart {
+        margin-left: 0.5rem;
+        font-size: 0.95rem;
+    }
+
+    .tarih-yil {
+        font-size: 1rem;
+    }
+    .tarih-kart-baslik {
+        font-size: 1rem;
+        padding: 0.6rem 0.8rem;
+        margin-left: 0.3rem;
+    }
+}
+
+
+/* FOOTER */
+footer {
+    background-color: #2d3e50;
+    color: #eee;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 4rem;
+    font-size: 0.95rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    #mirasimiz-header h1 {
+        font-size: 2rem;
+    }
+
+    #mirasimiz-header p {
+        font-size: 1rem;
+    }
+
+    .mirasimiz-kale, .kale-bolum {
+        margin: 1.5rem 1rem;
+        padding: 1.2rem;
+    }
+
+    .mirasimiz-kale h2,
+    .kale-bolum-baslik {
+        font-size: 1.4rem;
+    }
+
+    .mirasimiz-kale p,
+    .kale-bolum p {
+        font-size: 1rem;
+    }
+
+    .mirasimiz-kale img {
+        max-height: 300px;
+    }
+
+    main > p {
+        font-size: 1rem;
+        padding: 0 0.5rem;
+    }
+
+    footer {
+        font-size: 0.85rem;
+        padding: 0.75rem;
+    }
+    .mimari-liste li {
+        font-size: 1rem;
+    }
+}
+
+.harita-kapsayici iframe {
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+
+
+
+/* Form kapsayıcı */
+.form-container {
+  background-color: #ffffff;
+  padding: 30px;
+  margin: 40px auto;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+}
+
+/* Başlık */
+.form-baslik-h1 {
+  text-align: center;
+  color: #005ca8;
+  margin-bottom: 25px;
+  font-size: 28px;
+}
+
+/* Etiket */
+.form-etiket {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+/* Grup düzeni */
+.form-grup {
+  margin-bottom: 20px;
+}
+
+/* Girdi alanları */
+.form-girdi,
+.form-sec,
+.form-textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #bcd2e8;
+  border-radius: 8px;
+  font-size: 15px;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+.form-girdi:focus,
+.form-sec:focus,
+.form-textarea:focus {
+  border-color: #0077cc;
+  outline: none;
+}
+
+/* Radyo buton grubu */
+.radio-grup {
+  display: flex;
+  gap: 15px;
+  margin-top: 5px;
+}
+
+
+
+/* Sonuç bölümü */
+#result {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #e6f2ff;
+  border-left: 4px solid #0077cc;
+  border-radius: 8px;
+  font-size: 16px;
+  display: none;
+}
+
 

@@ -23,83 +23,62 @@
       </ul>
     </div>
   </nav>
+<div class="film-banner">
+  <h1 class="ilgialanlarim-title">FİLMLER</h1>
+  <p class="film-slogan">Film izlemek benim için sadece bir hobi değil, bir tutku. Her sahne beni başka bir dünyaya götürüyor.</p>
+</div>
 
-  <style>
-  
-  
 
-    .film-listesi { display: flex; flex-wrap: wrap; gap: 15px; }
-    .film {
-      border: 1px solid #0077cc;
-      border-radius: 8px;
-      padding: 10px;
-      width: 200px;
-      background: #e6f0ff;
-      text-align: center;
-    }
-    .film img { width: 100%; border-radius: 5px; }
-    .film h3 { font-size: 18px; margin: 10px 0 5px; }
-    .film p { font-size: 14px; margin: 0; }
-  </style>
-</head>
-<body>
+<div>
+  <h2 class="kategori-baslik">🧙‍♂️ Harry Potter Serisi</h2>
+  <div id="harryPotter" class="film-listesi"></div>
 
-<h1>En Sevdiğim Filmler</h1>
-<div id="filmListesi" class="film-listesi"></div>
+  <h2 class="kategori-baslik">🦸 Marvel Filmleri</h2>
+  <div id="marvel" class="film-listesi"></div>
 
+  <h2 class="kategori-baslik">🏆 Diğer Kategoriler</h2>
+  <div id="imdb" class="film-listesi"></div>
+</div>
 
 <script>
-const apiKey = 'a5ccea51d7ced723ac05a719fda5a8b2'; 
+const apiKey = 'a5ccea51d7ced723ac05a719fda5a8b2';
 
+const kategoriler = {
+  harryPotter: [671, 672, 673, 674, 675, 767, 12444, 12445],
+  marvel: [299534, 299536, 24428, 315635],
+  imdb: [155, 27205, 157336]
+};
 
-const filmIDleri = [
-  // Harry Potter Serisi
-  671,       // Philosopher's Stone
-  672,       // Chamber of Secrets
-  673,       // Prisoner of Azkaban
-  674,       // Goblet of Fire
-  675,       // Order of the Phoenix
-  767,       // Half-Blood Prince
-  12444,     // Deathly Hallows Part 1
-  12445,     // Deathly Hallows Part 2
+function filmYukle(kategoriAdi, idListesi) {
+  const container = document.getElementById(kategoriAdi);
 
-  // Marvel Filmleri
-  299534,    // Avengers: Endgame
-  299536,    // Avengers: Infinity War
-  24428,     // The Avengers
+  idListesi.forEach(id => {
+    fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=tr-TR`)
+      .then(response => response.json())
+      .then(film => {
+        const filmDiv = document.createElement('div');
+        filmDiv.className = 'film';
 
-  // IMDb/puanı yüksek filmler
- 
-  155,       // The Dark Knight
-  27205,     // Inception
-  157336     // Interstellar
-];
+        filmDiv.innerHTML = `
+          <img src="https://image.tmdb.org/t/p/w300${film.poster_path}" alt="${film.title}" />
+          <h3>${film.title}</h3>
+          <p><strong>Yıl:</strong> ${film.release_date?.substring(0,4)}</p>
+          <p><strong>Puan:</strong> ${film.vote_average}</p>
+          <p>${film.overview?.substring(0, 100)}...</p>
+        `;
 
-const filmListesiDiv = document.getElementById('filmListesi');
+        container.appendChild(filmDiv);
+      })
+      .catch(err => {
+        console.error('Film yükleme hatası:', err);
+      });
+  });
+}
 
-filmIDleri.forEach(id => {
-  fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=tr-TR`)
-    .then(response => response.json())
-    .then(film => {
-      const filmDiv = document.createElement('div');
-      filmDiv.className = 'film';
-
-      filmDiv.innerHTML = `
-        <img src="https://image.tmdb.org/t/p/w300${film.poster_path}" alt="${film.title}" />
-        <h3>${film.title}</h3>
-        <p><strong>Yıl:</strong> ${film.release_date?.substring(0,4)}</p>
-        <p><strong>Puan:</strong> ${film.vote_average}</p>
-        <p>${film.overview?.substring(0, 100)}...</p>
-      `;
-
-      filmListesiDiv.appendChild(filmDiv);
-    })
-    .catch(err => {
-      console.error('Film bilgisi yüklenirken hata:', err);
-    });
-});
+// Her kategori için filmleri çek
+for (const kategori in kategoriler) {
+  filmYukle(kategori, kategoriler[kategori]);
+}
 </script>
-  
-   <script src="script.js"></script>
 </body>
 </html>

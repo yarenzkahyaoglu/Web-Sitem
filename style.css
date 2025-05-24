@@ -577,14 +577,33 @@ body {
 
 
 /* === ÖZ GEÇMİŞ SAYFASI – ZAMAN ÇİZELGESİ ===== */
-
-.ozgecmis h1 {
-  font-size: 2.5rem;
-  color:  #060005;
+.ozgecmis-banner {
+  background-image: url('ozgecmis/baslik.jpg'); 
+  background-size: cover;
+  background-position: center;
+  padding: 80px 20px;
+  text-align: center;
+  color: white;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5); /* Karanlık efekt */
+  border-radius: 12px;
   margin-bottom: 40px;
-  font-weight: bold;
-  text-align:center;
 }
+
+.ozgecmis-title {
+  font-size: 50px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.ozgecmis-slogan {
+  font-style: italic;
+  font-size: 22px;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
 
 /* Timeline Genel */
 .timeline {
@@ -805,6 +824,33 @@ body {
 }
 
 
+.sehrim-banner {
+  background-image: url('sehrim/giresunbaslik.jpg'); 
+  background-size: cover;
+  background-position: center;
+  padding: 80px 20px;
+  text-align: center;
+  color: white;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5); /* Karanlık efekt */
+  border-radius: 12px;
+  margin-bottom: 40px;
+}
+
+.sehrim-title {
+  font-size: 50px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.sehrim-slogan {
+  font-style: italic;
+  font-size: 22px;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
 .slider-container {
   position: relative;
   width: 90%;
@@ -846,19 +892,6 @@ input[type="radio"] {
   border-radius: 10px;
 }
 
-.main-title {
-  text-align: center;
-    max-width: 600px;
-    margin: 10px auto;
-    padding: 20px;
-}
-
-.main-title h1 {
-  font-size: 3em;
-  color: #222;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-  margin-bottom: 5px;
-}
 
 
 #slide1:checked ~ .slides {
@@ -1315,57 +1348,34 @@ input[type="radio"] {
   opacity: 1;
 }
 
-
-
-
-#galeri {
-  padding: 40px 20px;
-  background: #f4f4f4;
+.mirasimiz-banner {
+  background-image: url('mirasimiz/baslik.jpg'); /* Film şeridi efekti */
+  background-size: cover;
+  background-position: center;
+  padding: 80px 20px;
   text-align: center;
+  color: white;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5); /* Karanlık efekt */
+  border-radius: 12px;
+  margin-bottom: 40px;
 }
 
-.gallery-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
-  max-width: 1000px;
+.mirasimiz-title {
+  font-size: 50px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.mirasimiz-slogan {
+  font-style: italic;
+  font-size: 22px;
+  max-width: 800px;
   margin: 0 auto;
-}
-
-.gallery-container img {
-  width: 100%;
-  border-radius: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
-
-.gallery-container img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  line-height: 1.6;
 }
 
 
-
-
-#mirasimiz-header {
-    background: linear-gradient(to right, #2d3e50, #485563);
-    color: #fff;
-    text-align: center;
-    padding: 2rem 1rem;
-    border-bottom: 4px solid #a3c9a8;
-}
-
-#mirasimiz-header h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
-    margin: 0;
-}
-
-#mirasimiz-header p {
-    margin-top: 0.5rem;
-    font-size: 1.2rem;
-    opacity: 0.85;
-}
 
 /* ANA İÇERİK - KALE GENEL BÖLÜM */
 .mirasimiz-kale {
@@ -1610,13 +1620,6 @@ footer {
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
-    #mirasimiz-header h1 {
-        font-size: 2rem;
-    }
-
-    #mirasimiz-header p {
-        font-size: 1rem;
-    }
 
     .mirasimiz-kale, .kale-bolum {
         margin: 1.5rem 1rem;
@@ -1732,3 +1735,71 @@ footer {
 }
 
 
+
+.film-banner {
+  background-image: url('indir.jpeg'); /* Film şeridi efekti */
+  background-size: cover;
+  background-position: center;
+  padding: 80px 20px;
+  text-align: center;
+  color: white;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5); /* Karanlık efekt */
+  border-radius: 12px;
+  margin-bottom: 40px;
+}
+
+.ilgialanlarim-title {
+  font-size: 50px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.film-slogan {
+  font-style: italic;
+  font-size: 22px;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+h2.kategori-baslik {
+      color: #00509e;
+      margin: 40px 0 20px;
+      border-bottom: 2px solid #00509e;
+      padding-bottom: 8px;
+    }
+
+    .film-listesi {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .film {
+      border: 1px solid #0077cc;
+      border-radius: 10px;
+      padding: 10px;
+      background: #ffffff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .film:hover {
+      transform: scale(1.03);
+    }
+
+    .film img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .film h3 {
+      font-size: 18px;
+      margin: 10px 0 5px;
+    }
+
+    .film p {
+      font-size: 14px;
+      margin: 0;
+    }

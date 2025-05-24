@@ -8,21 +8,21 @@ document.getElementById("menu-toggle").addEventListener("click", function () {
   const familyData = {
     mother: {
       name: "Esin Kahyaoğlu (Annem)",
-      photo: "annem.jpeg",
-      info: "Ford Otosan'da Fabrika Müdürlüğünde çalışıyor.",
-      detail: "Ailemizin bütünlüğünü sağlayıp bize sonsuz sevgisini veren annem."
+      photo: "hakkimda/annem.jpeg",
+      info: "Ford Otosan'da Fabrika Müdürlüğü'nde çalışıyor.",
+      detail: "Ailemizin bütünlüğünü sağlayıp bize sonsuz sevgisini veren annemdir."
     },
     father: {
       name: "Selçuk Kahyaoğlu (Babam)",
-      photo: "babam.jpeg",
-      info: "Ford Otosan'da atolye ekip lideri.",
-      detail: "Ailemizin yapıtaşı babam."
+      photo: "hakkimda/babam.jpeg",
+      info: "Ford Otosan'da atölye ekip lideri olarak çalışıyor.",
+      detail: "Ailemizin yapıtaşı ve eğlence kaynağımız babamdır."
     },
     brother: {
       name: "Yağız Efe Kahyaoğlu (Kardeşim)",
-      photo: "kardesim.jpeg",
-      info: "Yaramaz bir ilkokul 3. sınıf öğrencisi",
-      detail: "Ailemizin neşe kaynağı kardeşim."
+      photo: "hakkimda/kardesim.jpeg",
+      info: "Yaramaz bir ilkokul 3. sınıf öğrencisi.",
+      detail: "Ailemizin  tatlış haylazı kardeşimdir."
     }
   };
   // Butonlara Tıklama Eventi
@@ -64,12 +64,12 @@ document.getElementById("menu-toggle").addEventListener("click", function () {
 const friends = {
   iclal: {
     name: "İclal Yıldırım",
-    photo: "iclal.jpg",
-    info: "İclal benim liseden arkadaşım.O benim lise hayatım boyunca sıra arkadaşım aynı zamanda sırdaşımdı."
+    photo: "hakkimda/iclal.jpg",
+    info: "İclal benim liseden arkadaşım.O benim lise hayatım boyunca sıra arkadaşım aynı zamanda sırdaşımdı. Benim için bir kız kardeşten farkı yok."
   },
   dilara: {
     name: "Dilara Korkmaz",
-    photo: "dilara.JPG",
+    photo: "hakkimda/dilara.JPG",
     info: "Dilara benim lisedeki oda arkadaşım. Dört sene boyunca beraber yurdun zorluklarına göğüs gerdik. Gerek ağladık, gerek güldük ama hiç birbirimizden ayrılmadık."
   }
 };
@@ -103,4 +103,7 @@ function playAudio() { document.getElementById("historyAudio").play(); }
 //kahraman kısmı
 function showLegend() { document.getElementById("legendPopup").style.display = "block"; }
 function hideLegend() { document.getElementById("legendPopup").style.display = "none"; }
+
+
+
 

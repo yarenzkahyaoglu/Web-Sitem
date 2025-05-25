@@ -1,396 +1,281 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>İletişim</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>İletişim Formu</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+<style>
+  .card {
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .form-control, .form-select {
+    border-radius: 8px;
+    padding: 10px 15px;
+  }
+  textarea.form-control {
+    min-height: 120px;
+  }
+  .btn {
+    border-radius: 8px;
+    padding: 10px 20px;
+  }
+  .validation-btn {
+    min-width: 150px;
+  }
+</style>
 </head>
 <body>
-          <!-- ÜST KISIM -->
-   <nav class="navbar">
-    <div class="navbar-container">
-      <a class="navbar-brand" href="#">İLETİŞİM</a>
-      <button class="menu-toggle" id="menu-toggle">&#9776;</button>
-      <ul class="navbar-menu" id="navbar-menu">
-        <li><a href="hakkimda.html">Hakkımda</a></li>
-        <li><a href="ozgecmis.html">Öz Geçmiş</a></li>
-        <li><a href="ilgialanlarim.html">İlgi Alanlarım</a></li>
-        <li><a href="sehrim.html">Şehrim</a></li>
-        <li><a href="mirasimiz.html">Mirasımız</a></li>
-        <li><a class="active" href="#">İletişim</a></li>
-        <li><a href="giris.html">Giriş Yap</a></li>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">İLETİŞİM</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="hakkimda.html">Hakkımda</a></li>
+        <li class="nav-item"><a class="nav-link" href="ozgecmis.html">Öz Geçmiş</a></li>
+        <li class="nav-item"><a class="nav-link" href="ilgialanlarim.html">İlgi Alanlarım</a></li>
+        <li class="nav-item"><a class="nav-link" href="sehrim.html">Şehrim</a></li>
+        <li class="nav-item"><a class="nav-link" href="mirasimiz.html">Mirasımız</a></li>
+        <li class="nav-item"><a class="nav-link active" href="#">İletişim</a></li>
+        <li class="nav-item"><a class="nav-link" href="giris.html">Giriş Yap</a></li>
       </ul>
     </div>
-  </nav>
+  </div>
+</nav>
 
-  <style>
-.form-container {
-      background: #fff;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-      max-width: 600px;
-      width: 100%;
-      margin:40px auto;
-    }
+<div id="app" class="container my-5">
+  <div class="card shadow-sm border-0" style="max-width: 800px; margin: 0 auto;">
+    <div class="card-header bg-primary text-white py-3">
+      <h1 class="h4 mb-0"><i class="fas fa-envelope me-2"></i>İletişim Formu</h1>
+    </div>
+    <div class="card-body p-4">
+      <form @submit.prevent="sendForm">
+        <div class="mb-3">
+          <label for="ad" class="form-label">Adınız <span class="text-danger">*</span></label>
+          <input type="text" id="ad" v-model="form.ad" class="form-control" placeholder="Adınızı giriniz">
+        </div>
 
-    h2 {
-      text-align: center;
-      color: #0a3d62;
-      margin-bottom: 25px;
-    }
+        <div class="mb-3">
+          <label for="soyad" class="form-label">Soyadınız <span class="text-danger">*</span></label>
+          <input type="text" id="soyad" v-model="form.soyad" class="form-control" placeholder="Soyadınızı giriniz">
+        </div>
 
-    label {
-      display: block;
-      margin-top: 10px;
-      font-weight: 600;
-      color: #2f3640;
-    }
+        <div class="mb-3">
+          <label for="email" class="form-label">E-Posta <span class="text-danger">*</span></label>
+          <input type="text" id="email" v-model="form.email" class="form-control" placeholder="ornek@mail.com">
+        </div>
 
-    input[type="text"],
-    input[type="email"],
-    input[type="tel"],
-    input[type="date"],
-    select,
-    textarea {
-      width: 100%;
-      padding: 10px;
-      margin-top: 1px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      box-sizing: border-box;
-    }
+        <div class="mb-3">
+          <label for="telefon" class="form-label">Telefon <span class="text-danger">*</span></label>
+          <input type="text" id="telefon" v-model="form.telefon" class="form-control" placeholder="5__ ___ __ __">
+        </div>
 
+        <div class="mb-3">
+          <label class="form-label">Cinsiyet <span class="text-danger">*</span></label>
+          <div class="d-flex gap-3">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" id="cinsiyetErkek" value="Erkek" v-model="form.cinsiyet">
+              <label class="form-check-label" for="cinsiyetErkek">Erkek</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" id="cinsiyetKadin" value="Kadın" v-model="form.cinsiyet">
+              <label class="form-check-label" for="cinsiyetKadin">Kadın</label>
+            </div>
+          </div>
+        </div>
 
-    input[type="checkbox"] {
-      margin-right: 8px;
-    }
+        <div class="mb-3">
+          <label for="dogumTarihi" class="form-label">Doğum Tarihi <span class="text-danger">*</span></label>
+          <input type="date" id="dogumTarihi" v-model="form.dogumTarihi" class="form-control">
+        </div>
 
-    .radio-group {
-      margin-top: 6px;
-    }
+        <div class="mb-3">
+          <label for="sehir" class="form-label">Şehir <span class="text-danger">*</span></label>
+          <select id="sehir" v-model="form.sehir" class="form-select">
+            <option value="" disabled selected>Şehrinizi seçiniz</option>
+            <option value="İstanbul">İstanbul</option>
+            <option value="Ankara">Ankara</option>
+            <option value="İzmir">İzmir</option>
+            <option value="Diğer">Diğer</option>
+          </select>
+        </div>
 
-    .radio-group input {
-      margin-right: 5px;
-    }
+        <div class="mb-3">
+          <label for="konu" class="form-label">Mesaj Konusu <span class="text-danger">*</span></label>
+          <input type="text" id="konu" v-model="form.konu" class="form-control" placeholder="Konu başlığı">
+        </div>
 
-    button {
-      margin-top: 20px;
-      width: 100%;
-      background-color: #0a3d62;
-      color: white;
-      padding: 12px;
-      border: none;
-      border-radius: 6px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
+        <div class="mb-3">
+          <label for="mesaj" class="form-label">Mesajınız <span class="text-danger">*</span></label>
+          <textarea id="mesaj" v-model="form.mesaj" class="form-control" rows="5" placeholder="Mesajınızı detaylı yazınız..."></textarea>
+        </div>
 
-    button:hover {
-      background-color: #1e3799;
-    }
-  </style>
+        <div class="d-flex justify-content-between mt-4">
+          <div>
+            <button type="button" class="btn btn-warning validation-btn me-2" @click="validateVanilla">
+              <i class="fas fa-check-circle me-1"></i> JS Doğrula
+            </button>
+            <button type="button" class="btn btn-info validation-btn" @click="validateVue">
+              <i class="fas fa-check-double me-1"></i> Vue Doğrula
+            </button>
+          </div>
+          <div>
+            <button type="button" class="btn btn-outline-danger me-2" @click="clearForm">
+              <i class="fas fa-trash-alt me-1"></i> Temizle
+            </button>
+            <button type="submit" class="btn btn-success">
+              <i class="fas fa-paper-plane me-1"></i> Gönder
+            </button>
+          </div>
+        </div>
+      </form>
 
+      <div v-if="errors.length" class="alert alert-danger mt-4">
+        <h5 class="alert-heading"><i class="fas fa-exclamation-triangle me-2"></i>Hatalar:</h5>
+        <ul class="mb-0">
+          <li v-for="(err, index) in errors" :key="index">{{ err }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 
- <div class="form-container">
-    <h2>İletişim Formu</h2>
-<form id="contactForm">
-  <label>İsim:</label><input id="name" v-model="name" placeholder="İsim" /><br />
-  <label>Mail Adresi:</label><input id="email" v-model="email" placeholder="E-posta" /><br />
-  <label>Telefon Numarası:</label><input id="phone" v-model="phone" placeholder="Telefon" /><br />
-
-  <label>Cinsiyet:</label>
-  <label><input type="radio" value="Kadın" v-model="gender" /> Kadın</label>
-  <label><input type="radio" value="Erkek" v-model="gender" /> Erkek</label><br />
-
-  <label>Doğum Tarihi:</label><br />
-  <input type="date" v-model="birthdate" /><br />
-
-  <label>Şehir:</label><br />
-  <select v-model="city">
-    <option value="">Şehir seçin</option>
-   <option>Adana</option>
-<option>Adıyaman</option>
-<option>Afyonkarahisar</option>
-<option>Ağrı</option>
-<option>Amasya</option>
-<option>Ankara</option>
-<option>Antalya</option>
-<option>Artvin</option>
-<option>Aydın</option>
-<option>Balıkesir</option>
-<option>Bilecik</option>
-<option>Bingöl</option>
-<option>Bitlis</option>
-<option>Bolu</option>
-<option>Burdur</option>
-<option>Bursa</option>
-<option>Çanakkale</option>
-<option>Çankırı</option>
-<option>Çorum</option>
-<option>Denizli</option>
-<option>Diyarbakır</option>
-<option>Edirne</option>
-<option>Elazığ</option>
-<option>Erzincan</option>
-<option>Erzurum</option>
-<option>Eskişehir</option>
-<option>Gaziantep</option>
-<option>Giresun</option>
-<option>Gümüşhane</option>
-<option>Hakkâri</option>
-<option>Hatay</option>
-<option>Isparta</option>
-<option>Mersin</option>
-<option>İstanbul</option>
-<option>İzmir</option>
-<option>Kars</option>
-<option>Kastamonu</option>
-<option>Kayseri</option>
-<option>Kırklareli</option>
-<option>Kırşehir</option>
-<option>Kocaeli</option>
-<option>Konya</option>
-<option>Kütahya</option>
-<option>Malatya</option>
-<option>Manisa</option>
-<option>Kahramanmaraş</option>
-<option>Mardin</option>
-<option>Muğla</option>
-<option>Muş</option>
-<option>Nevşehir</option>
-<option>Niğde</option>
-<option>Ordu</option>
-<option>Rize</option>
-<option>Sakarya</option>
-<option>Samsun</option>
-<option>Siirt</option>
-<option>Sinop</option>
-<option>Sivas</option>
-<option>Tekirdağ</option>
-<option>Tokat</option>
-<option>Trabzon</option>
-<option>Tunceli</option>
-<option>Şanlıurfa</option>
-<option>Uşak</option>
-<option>Van</option>
-<option>Yozgat</option>
-<option>Zonguldak</option>
-<option>Aksaray</option>
-<option>Bayburt</option>
-<option>Karaman</option>
-<option>Kırıkkale</option>
-<option>Batman</option>
-<option>Şırnak</option>
-<option>Bartın</option>
-<option>Ardahan</option>
-<option>Iğdır</option>
-<option>Yalova</option>
-<option>Karabük</option>
-<option>Kilis</option>
-<option>Osmaniye</option>
-<option>Düzce</option>
-
-
-  </select><br />
-
-  <label>Mesaj Konusu:</label><br />
-  <select v-model="subject">
-    <option value="">Konu Seçin</option>
-    <option>Genel Bilgi</option>
-    <option>Geri Bildirim</option>
-    <option>Şikayet</option>
-    <option>Öneri</option>
-  </select><br />
-
-  <label><input type="checkbox" v-model="subscribe" /> Bültene abone olmak istiyorum</label><br />
-
-  <label>Eğitim Durumu:</label><br />
-  <select v-model="education">
-    <option value="">Seçiniz</option>
-    <option>İlkokul</option>
-    <option>Ortaokul</option>
-    <option>Lise</option>
-    <option>Üniversite</option>
-    <option>Yüksek Lisans</option>
-    <option>Doktora</option>
-  </select><br />
-
-  <label>Meslek:</label><br />
-  <input type="text" v-model="job" placeholder="Mesleğiniz" /><br />
-
-  <label>Adres:</label><br />
-  <textarea v-model="address" placeholder="Adresinizi yazınız"></textarea><br />
-
-  <label>Dosya Yükle:</label><br />
-  <input type="file" /><br />
-
-  <label>Tercih Edilen İletişim Saati:</label><br />
-  <input type="time" v-model="preferredTime" /><br />
-
-<label>Mesajınız:</label><br />
-  <textarea id="message" v-model="message" placeholder="Mesaj"></textarea><br />
-
-  <button id="jsValidateBtn" type="button">JS ile Doğrula</button>
-  <button id="vueValidateBtn" type="button">Vue ile Doğrula</button>
-  <button id="clearBtn" type="button">Temizle</button>
-  <button id="submitBtn" type="button">Gönder</button>
-</form>
- </div>
-
-<div id="result"></div>
+<footer class="bg-dark text-white text-center py-4 mt-4">
+  <div class="container">
+    <small>© 2025 Yaren Naz Kahyaoğlu. Tüm hakları saklıdır.</small>
+  </div>
+</footer>
 
 <script>
-  const vueApp = new Vue({
-    el: '#contactForm',
-    data: {
-      name: '',
-      email: '',
-      phone: '',
-      message: '',
-      gender: '',
-      birthdate: '',
-      city: '',
-      subject: '',
-      subscribe: false,
-      education: '',
-      job: '',
-      address: '',
-      preferredTime: '',
-      errors: []
-    },
-    methods: {
-      validateVue() {
-        this.errors = [];
-        if (!this.name.trim()) this.errors.push("İsim boş olamaz.");
-        if (!this.email.trim()) {
-          this.errors.push("E-posta boş olamaz.");
-        } else if (!/^\S+@\S+\.\S+$/.test(this.email)) {
-          this.errors.push("Geçersiz e-posta formatı.");
-        }
-        if (!this.phone.trim()) {
-          this.errors.push("Telefon boş olamaz.");
-        } else if (!/^\d+$/.test(this.phone)) {
-          this.errors.push("Telefon sadece rakamlardan oluşmalı.");
-        }
-        if (!this.gender) this.errors.push("Cinsiyet seçilmelidir.");
-        if (!this.birthdate) this.errors.push("Doğum tarihi girilmelidir.");
-        if (!this.city) this.errors.push("Şehir seçilmelidir.");
-        if (!this.subject) this.errors.push("Mesaj konusu seçilmelidir.");
-        if (!this.education) this.errors.push("Eğitim durumu seçilmelidir.");
-        if (!this.job.trim()) this.errors.push("Meslek girilmelidir.");
-        if (!this.address.trim()) this.errors.push("Adres girilmelidir.");
-        if (!this.message.trim()) this.errors.push("Mesaj boş olamaz.");
+const { createApp } = Vue;
 
-        const resultDiv = document.getElementById('result');
-        if (this.errors.length > 0) {
-          resultDiv.style.color = 'red';
-          resultDiv.style.fontWeight = 'bold';
-          resultDiv.style.textAlign = 'center';
-          resultDiv.innerHTML = this.errors.join('<br>');
-          return false;
-        } else {
-          resultDiv.style.color = 'green';
-          resultDiv.style.fontWeight = 'bold';
-          resultDiv.style.textAlign = 'center';
-          resultDiv.innerHTML = "Vue.js ile doğrulama başarılı!";
-          return true;
-        }
+createApp({
+  data() {
+    return {
+      form: {
+        ad: '',
+        soyad: '',
+        email: '',
+        telefon: '',
+        cinsiyet: '',
+        dogumTarihi: '',
+        sehir: '',
+        konu: '',
+        mesaj: ''
       },
-      clearForm() {
-        this.name = '';
-        this.email = '';
-        this.phone = '';
-        this.message = '';
-        this.gender = '';
-        this.birthdate = '';
-        this.city = '';
-        this.subject = '';
-        this.subscribe = false;
-        this.education = '';
-        this.job = '';
-        this.address = '';
-        this.preferredTime = '';
-        this.errors = [];
-        document.getElementById('result').innerHTML = '';
+      errors: []
+    }
+  },
+  methods: {
+    validateVanilla() {
+      this.errors = [];
+      
+      // Saf JS doğrulamaları
+      if (!this.form.ad.trim()) this.errors.push('Ad boş bırakılamaz.');
+      if (!this.form.soyad.trim()) this.errors.push('Soyad boş bırakılamaz.');
+      
+      if (!this.form.email) {
+        this.errors.push('Email boş bırakılamaz.');
+      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.form.email)) {
+        this.errors.push('Geçerli bir email adresi girin.');
       }
-    }
-  });
+      
+      if (!this.form.telefon) {
+        this.errors.push('Telefon boş bırakılamaz.');
+      } else if (!/^\d{10,11}$/.test(this.form.telefon)) {
+        this.errors.push('Geçerli bir telefon numarası girin (10 veya 11 haneli).');
+      }
+      
+      if (!this.form.cinsiyet) this.errors.push('Cinsiyet seçiniz.');
+      if (!this.form.dogumTarihi) this.errors.push('Doğum tarihi boş bırakılamaz.');
+      if (!this.form.sehir) this.errors.push('Şehir seçiniz.');
+      if (!this.form.konu.trim()) this.errors.push('Mesaj konusu boş bırakılamaz.');
+      if (!this.form.mesaj.trim()) this.errors.push('Mesaj boş bırakılamaz.');
 
-  function jsValidate() {
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-    const message = document.getElementById('message').value.trim();
+      if(this.errors.length === 0) {
+        alert('JS Doğrulama başarılı! Tüm alanlar geçerli.');
+      }
+    },
+    validateVue() {
+      this.errors = [];
+      
+      // Vue.js reaktif doğrulamaları
+      if (!this.form.ad) this.errors.push('Ad boş bırakılamaz.');
+      if (!this.form.soyad) this.errors.push('Soyad boş bırakılamaz.');
+      
+      if (!this.form.email) {
+        this.errors.push('Email boş bırakılamaz.');
+      } else {
+        const parts = this.form.email.split('@');
+        if (parts.length !== 2 || !parts[0] || !parts[1].includes('.')) {
+          this.errors.push('Email adresi geçerli değil.');
+        }
+      }
+      
+      if (!this.form.telefon) {
+        this.errors.push('Telefon boş bırakılamaz.');
+      } else if (this.form.telefon.length < 10 || this.form.telefon.length > 11 || isNaN(this.form.telefon)) {
+        this.errors.push('Telefon numarası 10-11 haneli olmalı ve sadece rakam içermelidir.');
+      }
+      
+      if (!this.form.cinsiyet) this.errors.push('Cinsiyet seçiniz.');
+      
+      if (!this.form.dogumTarihi) {
+        this.errors.push('Doğum tarihi boş bırakılamaz.');
+      } else {
+        const today = new Date();
+        const birthDate = new Date(this.form.dogumTarihi);
+        if (birthDate > today) {
+          this.errors.push('Doğum tarihi gelecekte olamaz.');
+        }
+      }
+      
+      if (!this.form.sehir) this.errors.push('Şehir seçiniz.');
+      if (!this.form.konu) this.errors.push('Mesaj konusu boş bırakılamaz.');
+      if (!this.form.mesaj) this.errors.push('Mesaj boş bırakılamaz.');
 
-    let errors = [];
-    if (!name) errors.push("İsim boş olamaz.");
-    if (!email) {
-      errors.push("E-posta boş olamaz.");
-    } else if (!/^\S+@\S+\.\S+$/.test(email)) {
-      errors.push("Geçersiz e-posta formatı.");
-    }
-    if (!phone) {
-      errors.push("Telefon boş olamaz.");
-    } else if (!/^\d+$/.test(phone)) {
-      errors.push("Telefon sadece rakamlardan oluşmalı.");
-    }
-    if (!message) errors.push("Mesaj boş olamaz.");
-
-    const resultDiv = document.getElementById('result');
-    if (errors.length > 0) {
-      resultDiv.style.color = 'red';
-      resultDiv.innerHTML = errors.join('<br>');
-      return false;
-    } else {
-      resultDiv.style.color = 'green';
-      resultDiv.innerHTML = "JS ile doğrulama başarılı!";
-      return true;
+      if(this.errors.length === 0) {
+        alert('Vue Doğrulama başarılı! Tüm alanlar geçerli.');
+      }
+    },
+    clearForm() {
+      this.form = {
+        ad: '',
+        soyad: '',
+        email: '',
+        telefon: '',
+        cinsiyet: '',
+        dogumTarihi: '',
+        sehir: '',
+        konu: '',
+        mesaj: ''
+      };
+      this.errors = [];
+    },
+    sendForm() {
+      // Önce Vue doğrulamasını çalıştır
+      this.validateVue();
+      
+      if(this.errors.length > 0) return;
+      
+      // Verileri JSON olarak localStorage'a kaydet
+      localStorage.setItem('formData', JSON.stringify(this.form));
+      
+      // Sonuç sayfasına yönlendir
+      window.location.href = 'sonuc.html';
     }
   }
-
-  document.getElementById('jsValidateBtn').addEventListener('click', () => {
-    jsValidate();
-  });
-
-  document.getElementById('vueValidateBtn').addEventListener('click', () => {
-    vueApp.validateVue();
-  });
-
-  document.getElementById('clearBtn').addEventListener('click', () => {
-    vueApp.clearForm();
-  });
-
-  document.getElementById('submitBtn').addEventListener('click', () => {
-    if (vueApp.validateVue()) {
-      const newMessage = {
-        name: vueApp.name.trim(),
-        email: vueApp.email.trim(),
-        phone: vueApp.phone.trim(),
-        message: vueApp.message.trim(),
-        gender: vueApp.gender,
-        birthdate: vueApp.birthdate,
-        city: vueApp.city,
-        subject: vueApp.subject,
-        subscribe: vueApp.subscribe,
-        education: vueApp.education,
-        job: vueApp.job,
-        address: vueApp.address,
-        preferredTime: vueApp.preferredTime,
-        date: new Date().toLocaleString()
-      };
-      let messages = JSON.parse(sessionStorage.getItem('messages') || '[]');
-      messages.push(newMessage);
-      sessionStorage.setItem('messages', JSON.stringify(messages));
-      alert("Form gönderildi!");
-      vueApp.clearForm();
-      window.location.href = "sonuc.html";
-    }
-  });
+}).mount('#app');
 </script>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -5,360 +5,265 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Şehrim</title>
     <link rel="stylesheet" href="style.css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+        .carousel-item img {
+         height: 400px;
+        object-fit: cover;
+}
+
+    </style>
 </head>
 <body>
-  <!-- ÜST KISIM -->
-   <nav class="navbar">
-    <div class="navbar-container">
-      <a class="navbar-brand" href="#">ŞEHRİM</a>
-      <button class="menu-toggle" id="menu-toggle">&#9776;</button>
-      <ul class="navbar-menu" id="navbar-menu">
-        <li><a href="hakkimda.html">Hakkımda</a></li>
-        <li><a href="ozgecmis.html">Öz Geçmiş</a></li>
-        <li><a href="ilgialanlarim.html">İlgi Alanlarım</a></li>
-        <li><a class="active" href="#">Şehrim</a></li>
-        <li><a href="mirasimiz.html">Mirasımız</a></li>
-        <li><a href="iletisim.html">İletişim</a></li>
-          <li><a href="giris.html">Giriş Yap</a></li>
-      </ul>
-    </div>
-  </nav>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">ŞEHRİM</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="hakkimda.html">Hakkımda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ozgecmis.html">Öz Geçmiş</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ilgialanlarim.html">İlgi Alanlarım</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#">Şehrim</a></li>
+                    <li class="nav-item"><a class="nav-link" href="mirasimiz.html">Mirasımız</a></li>
+                    <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
+                    <li class="nav-item"><a class="nav-link" href="giris.html">Giriş Yap</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-   <div class="sehrim-banner">
-      <h1 class="sehrim-title">ŞEHRİM</h1>
-      <p class="sehrim-slogan">Benim şehrim yeşil ve mavinin iç içe olduğu, fındığın ana vatanı.</p>
-      </div>
-
-<div class="slider-container">
-  <!-- Radio Buttons for Navigation -->
-  <input type="radio" name="slider" id="slide1" checked>
-  <input type="radio" name="slider" id="slide2">
-  <input type="radio" name="slider" id="slide3">
-  <input type="radio" name="slider" id="slide4">
-   <input type="radio" name="slider" id="slide5">
-
-  <!-- Slides Wrapper -->
-  <div class="slides">
-    <div class="slide s1" style="background-image: url('sehrim/kale.jpg');" onclick="location.href='#giresun-info'">
-      <div class="slide-img-title">Giresun'u Keşfet</div>
-    </div>
-    <div class="slide s2" style="background-image: url('sehrim/giresun.jpg');" onclick="location.href='#eski-info'">
-      <div class="slide-img-title">Giresun'un Tarihi</div>
-    </div>
-    <div class="slide s3" style="background-image: url('sehrim/ada.jpeg');" onclick="location.href='#dogal-info'">
-      <div class="slide-img-title">Doğal Güzellikleri</div>
-    </div>
-    <div class="slide s4" style="background-image: url('sehrim/muze.jpeg');" onclick="location.href='#tarihi-info'">
-      <div class="slide-img-title">Tarihi Güzellikleri</div>
-      </div>
-    <div class="slide s5" style="background-image: url('sehrim/findik.jpg');" onclick="location.href='#meshur-info'">
-      <div class="slide-img-title">Neyi Meşhur?</div>
-    </div>
-  </div>
-
-  <!-- Manual Navigation Labels -->
-  <div class="navigation">
-    <label for="slide1" class="nav-btn"></label>
-    <label for="slide2" class="nav-btn"></label>
-    <label for="slide3" class="nav-btn"></label>
-    <label for="slide4" class="nav-btn"></label>
-    <label for="slide5" class="nav-btn"></label>
-  </div>
-</div>
-
-<div id="giresun-info" class="info-section">
-  <h2>Giresun</h2>
-  <p>Giresun, Karadeniz’in incisi olarak bilinen, yeşilin ve mavinin kucaklaştığı eşsiz bir şehirdir.
-    Karadeniz'e kıyısı olan Giresun doğudan batıya Trabzon, Gümüşhane, Erzincan, Sivas ve Ordu illeriyle çevrilidir.
-    Tarihi ve kültürel zenginlikleriyle dikkat çeken Giresun, doğal güzellikleriyle de ziyaretçilerini büyüler.
-    Fındık üretimiyle ünlü olan şehir, aynı zamanda Türkiye'nin Karadeniz'deki tek adasına ev sahipliği yapmaktadır.
-    Kirazın bütün dünyaya buradan yayıldığı kabul edilir. Yerli halkın çoğunluğunu Çepniler oluşturur.
-    Giresun'un trafik numarası 28'dir.
-    <a href="https://www.nvi.gov.tr/Giresun" target="_blank" class="inline-link" 
-       title="Nüfus Müdürlüğü resmi sitesi">Yaklaşık nüfusu 455.922</a> olarak kayıtlıdır.</p>
-
-       <details class="ilce-detay">
-    <summary><strong>Giresun İlçeleri</strong></summary>
-    <div class="ilce-listesi">
-      <div class="ilce-grubu">
-        <h3>Merkez İlçeler</h3>
-        <ul>
-          <li><a href="https://giresun.bel.tr" target="_blank">Merkez</a></li>
-          <li><a href="https://www.bulancak.bel.tr" target="_blank">Bulancak</a></li>
-          <li><a href="https://piraziz.bel.tr" target="_blank">Piraziz</a></li>
-           <li><a href="https://kesap.bel.tr" target="_blank">Keşap</a></li>
-
-        </ul>
-      </div>
-      
-      <div class="ilce-grubu">
-        <h3>Kıyı İlçeleri</h3>
-        <ul>
-          <li><a href="https://www.gorele.bel.tr" target="_blank">Görele</a></li>
-          <li><a href="https://www.eynesil.bel.tr" target="_blank">Eynesil</a></li>
-          <li><a href="https://www.tirebolu.bel.tr" target="_blank">Tirebolu</a></li>
-          <li><a href="https://www.espiye.bel.tr" target="_blank">Espiye</a></li>
-
-          
-        </ul>
-      </div>
-      
-      <div class="ilce-grubu">
-        <h3>İç Kesim İlçeler</h3>
-        <ul>
-          <li><a href="https://www.sebinkarahisar.bel.tr" target="_blank">Şebinkarahisar</a></li>
-          <li><a href="https://www.alucra.bel.tr" target="_blank">Alucra</a></li>
-          <li><a href="https://www.camoluk.bel.tr" target="_blank">Çamoluk</a></li>
-            <li><a href="https://www.dereli.bel.tr" target="_blank">Dereli</a></li>
-        
-        </ul>
+  <div id="slider" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <a href="#genel"><img src="sehrim/kale.jpg" class="d-block w-100" alt="Giresun Adası"></a>
+      <div class="carousel-caption bottom-left">
+        <small><em>Giresun'u Tanı</em></small>
       </div>
     </div>
-  </details>
-</div>
-
-
-<div id="eski-info" class="info-section">
-  <h2>Giresun Tarihi</h2>
-  <p>
-    Giresun, Antik Çağ’da bir Miletos kolonisi olarak kurulmuştur. Kerasus adıyla bilinen şehir, Romalı ve Bizanslı dönemlerde önemini korumuş, ancak bu dönemlere dair sınırlı bilgi günümüze ulaşmıştır. Coğrafyacı Strabon ve Romalı yönetici Arrien, şehrin geçmişine dair bilgiler vermiştir.
-
-Türk tarihi açısından, Giresun'un kaderi 1397 yılında değişmiştir. Bayramlu Beyliği’nden Emir Süleyman Bey, Giresun’u fethederek bölgenin Türkleşmesini sağlamıştır. Giresun, bu tarihten itibaren Vilayet-i Çepni olarak anılmış, Çepni Türkmenleri bölgeye yerleştirilmiştir. İlginç bir şekilde, bu fetih Fatih Sultan Mehmet’ten (1461) çok daha önce gerçekleşmiştir; ancak tarih kitaplarında genellikle bu gerçek atlanır.
-
-Giresun’un Osmanlı’ya katılması ise 1461 yılında, Fatih’in Trabzon seferiyle gerçekleşmiştir. 1920’ye kadar Trabzon’a bağlı kalan Giresun, bu tarihte sancak olmuş, 1923’te ise il statüsü kazanmıştır.</p>
-
-<p>İlk yıllarda merkez, Tirebolu ve Görele ilçeleri ile bunlara bağlı bucaklardan oluşuyordu.
-
-Tarih öncesi dönemlerde de Giresun çevresinde yerleşim izleri bulunmuştur. M.Ö. 2000’li yıllardan itibaren Türk varlığı (İskitler, Oğuzlar, Hunlar, Peçenekler, Hazarlar gibi) bölgede etkili olmuştur. Çevre mahalle adları ve halk ağzı da bu kültürel kökeni yansıtmaktadır.
-
-Ayrıca Giresun’un karşısında yer alan Karadeniz’in tek adası olan Giresun Adası (Aretias), antik dönemde dini törenler ve kült merkezleriyle tanınır. Giresun, zengin tarihi, kültürel çeşitliliği ve doğasıyla Karadeniz’in önemli şehirlerinden biridir.
-</p>
-
-
-<button class="giresun-tarihi-dinleme" onclick="playAudio()">
-  🔊 Giresun'un Tarihi Dinlemek için Lütfen Tıklayınız.
-</button>
-<audio id="historyAudio" src="sehrim/giresun_tarihi.mp3"></audio>
-
-
-<button onclick="showLegend()" 
-        style="background: #055b29;
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 6px;
-        cursor: pointer;
-        margin: 10px 0;">
-   Atatürk Giresun'da
-</button>
-
-<div id="legendPopup" style="display: none;
-position: fixed;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-background: white;
-padding: 20px;
-border-radius: 10px;
-box-shadow: 0 0 20px rgba(0,0,0,0.3);
-z-index: 1000;
-max-width: 500px;">
-   <h3>19 Eylül 1924</h3>
-   <p>Atatürk'ün Giresun ziyareti Samsun’a doğru ilerlerken 19 Eylül 1924 tarihinde
-yapılan bir ziyarettir. Atatürk Giresun ziyaretinde de her gittiği yerde
-uyguladığı gibi, kendisini karşılamaya gelen halkı selamlamış, gençlerle
-daha fazla ilgilenmiştir. Yine Belediye, Valilik, Bilgi
-Yurdu, Vali Konağı gibi mekânları ziyaret ederek buralarda devlet erkânı,
-memurlar, öğretmenler ve halkın maruzatlarını dinlemiş, anlık çözümler
-önermiş, konu ile ilgili Vali Bey’e hemen talimat vermiştir. Bu ziyaret
-esnasında kendisine, Millî mücadeledeki başarılarına övgüler dizen şiirini
-okuyan Dr. Nejdet Bey’i dinlemiş ve bu konularda gençlere öğütlerde
-bulunmuştur. Akşam Giresun’dan ayrılmış, Samsun’a doğru yola devam
-etmiştir.</p>
-<div class="popup-image-container">
-     <img src="sehrim/ataturk.jpeg" alt="Atatürk Giresun'da" class="popup-image">
-     <div class="image-caption">Atatürk'ün Giresun ziyareti</div>
-   </div>
-   <button onclick="hideLegend()" style="background: #5e0a04; color: white; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer; margin-top: 10px;">Kapat</button>
-</div>
-
-</div>
-
-
-<div id="dogal-info" class="info-section">
-  <h2>Doğal Güzellikleri</h2>
-  <div class="card-container">
-    <div class="nature-card">
-      <img src="sehrim/giresunadasi.jpg" alt="Giresun Adası">
-      <h3>Giresun Adası</h3>
-      <p>Giresun Adası, Karadeniz'in Türkiye kıyılarında yer alan tek adadır.Giresun Adası, Amazon kadınlarının savaş tanrısı Ares adına tapınak inşa ettikleri yer olarak bilinir.
-        Herkül'ün Altın Post'u aramak için geldiği efsanelere konu olan adada, surlar, manastır, kilise gibi tarihi yapılar bulunmaktadır.
-        Bu kalıntılar, adanın antik çağlardan itibaren yerleşim gördüğünü ve dini bir merkez
-         olduğunu göstermektedir.
-        Hem doğa tutkunları hem de tarih meraklıları için eşsiz bir destinasyondur.
-        </p>
-    <div class="extra-info">
-    Giresun şehir merkezinin 1,6 km açığında, yaklaşık 40.000 metrekarelik bir alana sahiptir.
-    Giresun Adası, Üçkayalar Balıkçı Barınağı'ndan kalkan teknelerle ziyaret edilebilir.
-    Hava koşullarına bağlı olarak, özellikle yaz aylarında düzenlenen turlarla ada gezilebilir.
-    Her yıl Mayıs ayında düzenlenen Aksu Festivali kapsamında, ada etrafında tekne turları düzenlenir
-     ve çeşitli ritüeller gerçekleştirilir.
-    </div>
-    </div>
-    <div class="nature-card">
-      <img src="sehrim/mavigol.jpeg" alt="Mavi Göl">
-      <h3>Mavi Göl</h3>
-      <p>Mavi Göl, Giresun'un Dereli ilçesinde, Kuzalan Tabiat Parkı sınırları içinde yer alan 
-        ve Karadeniz Bölgesi'nde sodalı suyun dere şeklinde aktığı tek yer olma özelliğine 
-        sahip eşsiz bir doğal güzelliktir. Göksu Deresi'nin sodalı suyu ve çevresindeki kireç 
-        taşlarının etkileşimiyle özellikle yaz aylarında turkuaz bir renge bürünen Mavi Göl,
-         ziyaretçilerine görsel bir şölen sunar </p>
-    <div class="extra-info">
-      Giresun şehir merkezine yaklaşık 45 km, Dereli ilçesine ise 13 km mesafede bulunmaktadır.
-      Alancık Köyü, Kuzalan Mahallesi sınırları içinde yer alan göle ulaşım oldukça kolaydır.
-    Gölde yüzmek yasak olsa da, çevresindeki yürüyüş parkurları ve seyir terasları
-    doğayla iç içe vakit geçirmek isteyenler için idealdir .
-
-
-    </div>
-    </div>
-    <div class="nature-card">
-      <img src="sehrim/kumbet.jpg" alt="Kümbet Yaylası">
-      <h3>Kümbet Yaylası</h3>
-      <p> Kümbet Yaylası, Giresun'un Dereli ilçesi sınırlarında, 
-        şehir merkezine yaklaşık 60–65 km mesafede yer alan ve 1640 metre rakımıyla 
-        Doğu Karadeniz'in en popüler yaylalarından biridir. 
-        Rengarenk çiçeklerle kaplı bu yayla, temiz havası ve doğal dokusuyla huzur verir.
-       Doğal güzellikleri, zengin bitki örtüsü ve kültürel etkinlikleriyle hem yerli hem de yabancı turistlerin ilgisini çeker</p>
-      <div class="extra-info">
-        Her yıl Temmuz ayının ikinci haftasında düzenlenen Kümbet Yayla Şenlikleri,
-        geleneksel müzik, halk oyunları ve yerel lezzetlerle renkli bir atmosfer sunar. 
-Konaklama imkânları ve doğa yürüyüş rotaları mevcuttur.
-    </div>
-    </div>
-
-  </div>
-</div>
-
-
-<div id="tarihi-info" class="info-section">
-  <h2>Tarihi Güzellikleri</h2>
-
-  <div class="map-container">
-    <!-- Giresun Kalesi -->
-    <div class="pin" style="top: 18%; left: 40%;">
-      <div class="pin-dot"></div>
-      <div class="pin-info">
-        <h4>Giresun Kalesi</h4>
-        <img src="sehrim/giresunkalesi.jpg" alt="Giresun Kalesi" style="width:100%; border-radius:6px; margin-bottom:8px;">
-        <p>Giresun Kalesi, MÖ 2. yüzyılda Pontus Kralı I. Farnakes tarafından inşa edilmiştir. Antik kaynaklarda "Bronz Duvarlı Kale" olarak anılmaktadır. Trabzon İmparatorluğu döneminde, 1300'lü yıllarda Trabzon İmparatoru II. Aleksios tarafından onarılmıştır. Kale, denize hakim bir konumda olup, ticaret yollarının birleştiği noktada stratejik bir askeri yapı olarak kullanılmıştır. Günümüzde kale içinde Topal Osman Ağa'nın mezarı, şehitlik ve Hacı Bektaşi Veli'nin müridi Kurban Dede'nin türbesi bulunmaktadır..</p>
-         <a href="mirasimiz.html" target="_blank" style="display:inline-block; margin-top:8px; color:#FF5722; text-decoration:underline; font-weight:bold;">
-      Daha fazla bilgi için tıklayınız.
-    </a>
+    <div class="carousel-item">
+      <a href="#onemliyerler"><img src="sehrim/tirebolukalesi.jpg" class="d-block w-100" alt="Giresun Kalesi"></a>
+      <div class="carousel-caption bottom-left">
+        <small><em>Önemli Yerler</em></small>
       </div>
     </div>
-
-    <!-- Giresun Müzesi -->
-    <div class="pin" style="top: 14%; left: 37%;">
-      <div class="pin-dot"></div>
-      <div class="pin-info">
-        <h4>Giresun Müzesi</h4>
-        <img src="sehrim/giresun_muze.jpg" alt="Giresun Müzesi" style="width:100%; border-radius:6px; margin-bottom:8px;">
-        <p>Giresun Müzesi, 1850-1860 yıllarında Rumlar tarafından inşa edilen Gogora Kilisesi'nde yer almaktadır. 1924 yılına kadar kilise olarak kullanılan yapı, 1948-1967 yılları arasında hapishane olarak kullanılmış ve 1988 yılında müze olarak hizmete açılmıştır. Müze koleksiyonunda Eski Tunç Çağı, Hitit, Helenistik, Roma, Bizans, Selçuklu ve Osmanlı dönemlerine ait arkeolojik ve etnografik eserler sergilenmektedir.</p>
+    <div class="carousel-item">
+      <a href="#harita"><img src="sehrim/yemek.jpg" class="d-block w-100" alt="Giresun Mutfağı"></a>
+      <div class="carousel-caption bottom-left">
+        <small><em>Giresun Mutfağı</em></small>
       </div>
     </div>
-
-     <div class="pin" style="top: 65%; left: 40%;">
-      <div class="pin-dot"></div>
-      <div class="pin-info">
-        <h4>Şebinkarahisar Kalesi</h4>
-        <img src="sehrim/sebinkalesi.jpg" alt="Şebinkarahisar Kalesi" style="width:100%; border-radius:6px; margin-bottom:8px;">
-        <p>Hacıkayası olarak bilinen yüksek bir kaya üzerine inşa edilmiş olan kale, iç ve dış olmak üzere iki bölümden oluşmaktadır. İlk yapımının Roma dönemine kadar uzandığı düşünülen kale, özellikle 1184 yılında Mengücekli hükümdarı Fahrettin Behramşah tarafından önemli eklemelerle güçlendirilmiştir. Kale, Selçuklu ve Osmanlı dönemlerine ait surlar ve yapılarla zenginleşmiştir. Günümüzde kalenin iç kısmında kayaya oyulmuş su sarnıçları ve sur kalıntıları görülebilmektedir.</p>
+    <div class="carousel-item">
+      <a href="#mutfak"><img src="sehrim/giresun.jpg" class="d-block w-100" alt="Mavi Göl"></a>
+      <div class="carousel-caption bottom-left">
+        <small><em>Giresun Haritası</em></small>
       </div>
     </div>
-
-     <div class="pin" style="top: 75%; left: 38%;">
-      <div class="pin-dot"></div>
-      <div class="pin-info">
-        <h4>Atatürk Evi</h4>
-        <img src="sehrim/ataturkevi.jpg" alt="Atatürk Evi" style="width:100%; border-radius:6px; margin-bottom:8px;">
-        <p>Mustafa Kemal Atatürk'ün 11 Ekim 1924 tarihinde Şebinkarahisar'ı ziyaretinde bir gece konakladığı ev, günümüzde "Atatürk Evi ve Müzesi" olarak ziyarete açıktır.
-yüzyıl sonu veya 20. yüzyıl başında inşa edilen bu ahşap yapı, Atatürk'ün kaldığı odalar, kullandığı eşyalar ve yöresel etnografik eserlerle donatılmıştır.
-Müze içerisinde ayrıca 500 kitaplık bir Atatürk Kütüphanesi ve Atatürk Köşesi bulunmaktadır.</p>
-      </div>
-    </div>
-
-    <!-- Tirebolu Kalesi -->
-    <div class="pin" style="top: 7%; left: 65%;">
-      <div class="pin-dot"></div>
-      <div class="pin-info">
-        <h4>Tirebolu Kalesi</h4>
-        <img src="sehrim/tirebolukalesi.jpg" alt="Tirebolu Kalesi" style="width:100%; border-radius:6px; margin-bottom:8px;">
-        <p>Tirebolu Kalesi, Tirebolu ilçesinin ilçe merkezinin deniz kıyısında, yüksek bir kayalık üzerinde yer almaktadır. İlk olarak Helenistik ya da Roma Dönemi'nde inşa edilmiş olup, Pontus İmparatorluğu döneminde tamamen yenilenmiş ve Orta Çağ kalesi karakterine bürünmüştür. Kale içinde Meryem Ana Kilisesi olarak adlandırılan küçük bir şapel ile bir mescit kalıntısı bulunmaktadır. Ayrıca Osmanlı dönemine ait çok sayıda mezar taşı da kalede yer almaktadır.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div id="meshur-info" class="info-section">
-  <h2>Neyi Meşhur?</h2>
-  <div class="vitrin-wrapper">
     
-    <!-- Fındık -->
-    <div class="vitrin-card">
-      <div class="vitrin-bg" style="background-image: url('sehrim/kocan.jpg');"></div>
-      <div class="vitrin-overlay">
-        <h3>Fındık</h3>
-        <p>Türkiye'nin ve Dünya'nın fındık üretiminin kalbi Giresun'dur.
-          Yemyeşil fındık bahçeleri, şehrin ekonomisinin ve kültürünün temel taşıdır.</p>
-      </div>
-    </div>
-
-    
-       <div class="vitrin-card">
-      <div class="vitrin-bg" style="background-image: url('sehrim/karalahana.jpg');"></div>
-      <div class="vitrin-overlay">
-        <h3>Karalahana Çorbası</h3>
-        <p>Giresun mutfağının vazgeçilmez lezzeti, bolca tüketilen doyurucu ve vitamin deposu bir çorbadır.
-          Taze karalahana, mısır unu ve yerel baharatlarla hazırlanır.</p>
-      </div>
-    </div>
-
-
-    <div class="vitrin-card">
-      <div class="vitrin-bg" style="background-image: url('sehrim/fasulye.jpg');"></div>
-      <div class="vitrin-overlay">
-        <h3>Fasulye Diblesi</h3>
-        <p>Giresun'a özgü bu fasulye yemeği, özel baharatlarla ve geniş bakır sahanlarda pişirilir.
-          Giresun'da her evde mutlaka pişen bu yemek köy düğünlerinin ve özel günlerin vazgeçilmezidir.</p>
-      </div>
-    </div>
-
-       <div class="vitrin-card">
-      <div class="vitrin-bg" style="background-image: url('sehrim/isirgan.jpg');"></div>
-      <div class="vitrin-overlay">
-        <h3>Isırgan Çorbası</h3>
-        <p>Anadolu'nun şifalı otlarından ısırgan, Giresun'da lezzetli bir çorbaya dönüşür.
-          Bağışıklık güçlendiren bu çorba, genellikle yoğurt ve sarımsakla servis edilir.</p>
-      </div>
-    </div>
-
-    <!-- Kiraz -->
-    <div class="vitrin-card">
-      <div class="vitrin-bg" style="background-image: url('sehrim/kiraz.jpg');"></div>
-      <div class="vitrin-overlay">
-        <h3>Kiraz</h3>
-        <p>Dünyaya buradan yayılan kiraz, Giresun'un simgelerinden biridir.
-          Mayıs-Haziran aylarında Kiraz Festivali ile şenlenen şehir, kırmızı ve sulu kirazlarıyla ünlüdür.</p>
-      </div>
-    </div>
-
   </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#slider" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#slider" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  </button>
 </div>
 
+<!-- Slider Bitiş -->
 
+    <main class="container my-5">
+        <section class="mb-5" >
+            <h2 class="mb-4"id="genel">Giresun Hakkında</h2>
+            <p class="lead">
+                Giresun, Karadeniz Bölgesi'nin şirin ve doğal güzellikleriyle ünlü bir şehridir. Fındık üretiminde Türkiye'nin önde gelen illerinden biridir.
+            </p>
+            <p>
+             Karadeniz'in hırçın dalgalarına karşı dimdik duran Giresun, doğanın en cömert hediyelerini sunan bir liman kentidir.
+             Şehir, deniz, orman ve yayla turizmi açısından zengin bir potansiyele sahiptir.
+             Yemyeşil yamaçları fındık bahçeleriyle bezenmiş tarihi Giresun Kalesi'nden şehre baktığınızda, mavinin ve yeşilin en güzel tonlarının birbiriyle kucaklaştığını görebilirsiniz.
+             Kümbet ve Bektaş Yaylaları, yaz aylarında serinlemek isteyenler için doğal bir sığınak olurken, Karadeniz'in o meşhur hamsisi ve pancar çorbası da damaklarda unutulmaz tatlar bırakır.
+             Karadeniz'in yeşil doğası ile çevrili olan Giresun, aynı zamanda kültürel etkinlikler ve festivallerle de hareketlidir.
+            </p>
 
-<script src="script.js"></script>
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="card mb-3 renkli-kart">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-users me-2"></i>Nüfus</h5>
+                            <p class="card-text">Yaklaşık 450 bin </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mb-3 renkli-kart">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-graduation-cap me-2"></i>Eğitim</h5>
+                            <p class="card-text"><a href="https://www.giresun.edu.tr" target="_blank" class="text-decoration-none">
+                    Giresun Üniversitesi
+                </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mb-3 renkli-kart">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-map-marked-alt me-2"></i>İlçe Sayısı</h5>
+                            <p class="card-text">16 ilçe</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mb-3 renkli-kart">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-university me-2"></i>Önemli Özellik</h5>
+                            <p class="card-text">Karadenizin tek doğal adası</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Önemli Yerler -->
+        <section class="mb-5" >
+            <h2 class="mb-4"id="onemliyerler">Giresun'un Önemli Yerleri</h2>
+            
+            <div class="row g-4">
+
+                <div class="col-md-6 col-lg-4" id="ada">
+                    <div class="card h-100">
+                        <img src="sehrim/ada.jpeg" class="card-img-top" alt="Ada">
+                        <div class="card-body">
+                            <h5 class="card-title">Giresun Adası</h5>
+                            <p class="card-text">Giresun Adası, Karadeniz'deki tek ada olarak bilinir ve yaklaşık 40.000 m² alana sahiptir.
+                              Mitolojide Amazonların ve Herkül'ün izlerini taşıyan ada, tarihi kalıntılar, surlar ve Hamza Taşı gibi mistik unsurlar barındırır. 
+                              Aynı zamanda kuş gözlemciliği için önemli bir noktadır.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" id="kale">
+                    <div class="card h-100">
+                        <img src="sehrim/kale.jpg" class="card-img-top" alt="Kale">
+                        <div class="card-body">
+                            <h5 class="card-title">Giresun Kalesi</h5>
+                            <p class="card-text">Giresun Kalesi, MÖ 2. yüzyılda Pontus Kralı I. Farnekes tarafından inşa edilmiş olup, şehrin panoramik manzarasını sunar.
+                              Kale, içinde Topal Osman'ın mezarı ve tarihi sur kalıntıları bulundurur.
+                              Roma ve Bizans dönemlerinde stratejik önemini korumuştur. </p>
+                               <a href="mirasimiz.html" target="_blank" class="text-decoration-none">Daha fazlası için</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4" id="gol">
+                    <div class="card h-100">
+                        <img src="sehrim/gol.jpeg" class="card-img-top" alt="golı">
+                        <div class="card-body">
+                            <h5 class="card-title">Mavi Göl</h5>
+                            <p class="card-text">Mavi Göl, Dereli ilçesinde yer alan ve sodalı suyuyla turkuaz rengine bürünen doğal bir göldür. Kuzalan Tabiat Parkı içindeki göl, yürüyüş parkurları ve piknik alanlarıyla ziyaretçilere huzurlu bir ortam sunar.
+                              Efsaneye göre, gölün mavisi kavuşamayan aşıkların gözyaşlarından gelir. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-5" >
+            <h2 class="mb-4"id="mutfak">Giresun Mutfağı</h2>
+            
+            <div class="accordion" id="ankaraAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                            <i class="fa-solid fa-leaf me-2"></i> Fındık
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#ankaraAccordion">
+                        <div class="accordion-body">
+                            <p>Giresun, Türkiye’nin en kaliteli fındıklarının yetiştiği yer olarak bilinir. Giresun fındığı, ince kabuklu, yüksek yağ oranlı ve aromatik yapısıyla dünyaca ünlüdür.
+
+İhracatta önemli rol oynar. Avrupa ülkeleri ve özellikle çikolata üreticileri tarafından tercih edilir.
+
+Tatlılarda sıkça kullanılır: Fındıklı helva, fındık ezmesi, fındıklı kurabiye ve pastalarda Giresun fındığı öne çıkar.
+
+Yöresel hediyelik ürünler arasında kavrulmuş fındık ve fındık ezmesi ilk sıradadır.
+Giresun'da her yıl Fındık Festivali düzenlenir.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                            <i class="fa-solid fa-tree me-2"></i> Kiraz
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#ankaraAccordion">
+                        <div class="accordion-body">
+                            <p>Giresun’un adı, Yunanca'da "kerasia" (kiraz) kelimesinden gelir. Bu, Giresun’un tarih boyunca kirazın ana vatanlarından biri olduğunu gösterir.
+
+Tarihî bilgi: Antik dönemde Giresun kirazları Roma'ya götürülmüş ve Avrupa'ya yayılmıştır.
+
+Kiraz yetiştiriciliği, özellikle iç kesimlerde hâlâ devam etmektedir.
+
+Kiraz yaprağı, yöresel dolmalarda ve sarmalarda kullanılır.
+Kirazdan yapılan yöresel ürünler: Kiraz reçeli, kiraz suyu, kurutulmuş kiraz.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                            <i class="fa-solid fa-utensils me-2"></i>  Yemekler
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#ankaraAccordion">
+                        <div class="accordion-body">
+                            <p>Giresun mutfağı, Karadeniz’in geleneksel tatlarını taşırken kendine has lezzetlerle öne çıkar:</p>
+            <ul>
+                <li><strong>Karalahana Çorbası</strong>: Soğuk kış günlerinin vazgeçilmezi.</li>
+                <li><strong>Hamsili Pilav</strong>: Balık ve pirincin eşsiz uyumu.</li>
+                <li><strong>Pancar Diblesi</strong>: Karalahana ile yapılan yöresel sebze yemeği.</li>
+                <li><strong>Mısır Ekmeği</strong>: Mısır unundan yapılan geleneksel ekmek.</li>
+                <li><strong>Fındıklı Un Helvası</strong>: Giresun fındığıyla yapılan tatlı.</li>
+                <li><strong>Kuymak</strong>: Mısır unu, tereyağı ve peynirle hazırlanan kahvaltılık.</li>
+            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <h2 class="mb-4" >Giresun Haritası</h2>
+            <div class="ratio ratio-16x9"id="harita">
+                <iframe
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31319.16917100403!2d38.38185285870515!3d40.91343168341067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4061c992dbddb4b7%3A0x94b72b3e0d8c89de!2sGiresun!5e0!3m2!1str!2str!4v1685028131234!5m2!1str!2str"
+  width="600"
+  height="450"
+  style="border:0; border-radius: 10px;"
+  allowfullscreen=""
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
+            </div>
+        </section>
+    </main>
+
+<footer class="bg-dark text-white text-center py-4">
+    <div class="container">
+      <small>© 2025 Yaren Naz Kahyaoğlu. Tüm hakları saklıdır.</small>
+    </div>
+  </footer>
+    <!-- Bootstrap JS Bundle (Popper + Bootstrap JS) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -4,175 +4,224 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link rel="stylesheet" href="style.css">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Mirasımız</title>
+    <style>
+       .banner-img {
+            height: 400px;
+            object-fit: cover;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
-    <!-- ÜST KISIM -->
-   <nav class="navbar">
-    <div class="navbar-container">
+     <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
       <a class="navbar-brand" href="#">MİRASIMIZ</a>
-      <button class="menu-toggle" id="menu-toggle">&#9776;</button>
-      <ul class="navbar-menu" id="navbar-menu">
-        <li><a href="hakkimda.html">Hakkımda</a></li>
-        <li><a href="ozgecmis.html">Öz Geçmiş</a></li>
-        <li><a href="ilgialanlarim.html">İlgi Alanlarım</a></li>
-        <li><a href="sehrim.html">Şehrim</a></li>
-        <li><a class="active" href="#">Mirasımız</a></li>
-        <li><a href="iletisim.html">İletişim</a></li>
-          <li><a href="giris.html">Giriş Yap</a></li>
-      </ul>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="hakkimda.html">Hakkımda</a></li>
+          <li class="nav-item"><a class="nav-link" href="ozgecmis.html">Öz Geçmiş</a></li>
+          <li class="nav-item"><a class="nav-link" href="ilgialanlarim.html">İlgi Alanlarım</a></li>
+          <li class="nav-item"><a class="nav-link" href="sehrim.html">Şehrim</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#">Mirasımız</a></li>
+          <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
+          <li class="nav-item"><a class="nav-link" href="giris.html">Giriş Yap</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
 
- <div class="mirasimiz-banner">
-      <h1 class="mirasimiz-title">GİRESUN KALESİ</h1>
-      <p class="mirasimiz-slogan">Giresun'un manzarası ve tarihinin birleştiği yer.</p>
-      </div>
+    <!-- Banner -->
+    <header class="position-relative">
+  <!-- Blurlu arka plan -->
+  <div class="banner-blur-container">
+    <img src="sehrim/giresunkalesi.jpg" class="banner-img blur-img" alt="Panorama">
+  </div>
 
-    <!-- ANA İÇERİK -->
-    <main>
-        <section class="mirasimiz-kale">
-            <img src="mirasimiz/kale_gokyuzu.jpg" alt="Giresun Kalesi">
-            <p>
-                Giresun Kalesi, Türkiye'nin Karadeniz bölgesinde, Giresun şehir merkezinde yer alan tarihi bir yapıdır. 
-                Kale, stratejik konumu sayesinde geçmişte şehri ve limanı korumak amacıyla inşa edilmiştir. 
-            </p>
-        </section>
+  <!-- Üstteki net yazı kısmı -->
+  <div class="position-absolute top-50 start-50 translate-middle text-center text-white">
+    <h1 class="display-4 fw-bold">Giresun Kalesi</h1>
+    <p class="lead">Yeşil ve mavinin tarihle birleştiği yer</p>
+  </div>
+</header>
 
+  <!-- Ana içerik -->
+  <main class="container my-5">
 
-        <section class="kale-bolum">
-    <h3 class="kale-bolum-baslik">Genel Bilgiler</h3>
-    <p>
+    <!-- Genel Bilgiler -->
+    <section class="mb-5">
+      <h3 class="mb-4 border-bottom pb-2">Genel Bilgiler</h3>
+      <p class="fst-italic">
         Giresun Kalesi, Karadeniz'in eşsiz manzarasına hakim bir noktada, şehri ikiye bölen yarımadanın en yüksek tepesi üzerinde konumlanmış tarihi bir yapıdır.
+      </p>
+      <div class="text-center mb-4">
+        <img src="mirasimiz/kale_gokyuzu.jpg" alt="Giresun Kalesi" class="img-fluid rounded shadow-sm" style="max-height: 350px;" />
+      </div>
+      <p>
         Deniz seviyesinden yaklaşık 250 metre yükseklikte bulunan kale, stratejik konumuyla hem deniz hem de kara savunması için ideal bir noktada inşa edilmiştir.
         Kale, iç ve dış kale olmak üzere iki ana bölümden oluşmaktadır. İç kale, yarımadanın en yüksek noktasında yer alırken,
         dış kale yarımadayı çevreleyen surlardan meydana gelmektedir.
-        Surlar dikdörtgen formda olup büyük blok bazalt taşlardan yapılmıştır ve bazı bölümlerde doğal sarp kayalıklarla birleşmektedir.</p>
-        <p>Kalenin mimarı özellikleri arasında</p>
-        <ul class="mimari-liste">
-        <li>Kaba yonu taş kullanılarak yığma teknikle inşa edilmiş surlar</li>
-        <li>Gözetleme kuleleri</li>
-        <li>Su sarnıçları ve kuyular</li>
-        <li>Kayalara oyulmuş mağaralar ve odalar</li>
-        <li>Oturma sekileri ve nişler bulunan freskli odalar</li>
-    </ul>
-        Kalenin parlak surları nedeniyle antik kaynaklarda "Bronz Duvarlı Kale"
-        olarak anıldığı belirtilmektedir.
-        18. Günümüzde 500 metrelik parke ve beton bir yolla ulaşılabilen kale,
-        ziyaretçilerine Giresun'un panoramik manzarasını sunmaktadı.
-    </p>
-      <img src="mirasimiz/kalesurlar.jpg" alt="Kale">
-       <img src="mirasimiz/kalesurlari.jpg" alt="Kale">
-</section>
+        Surlar dikdörtgen formda olup büyük blok bazalt taşlardan yapılmıştır ve bazı bölümlerde doğal sarp kayalıklarla birleşmektedir.Kalenin parlak surları nedeniyle antik kaynaklarda "Bronz Duvarlı Kale" olarak anıldığı belirtilmektedir.
+        Günümüzde 500 metrelik parke ve beton bir yolla ulaşılabilen kale, ziyaretçilerine Giresun'un panoramik manzarasını sunmaktadır.
+      </p>
 
-<section class="kale-bolum">
-    <h3 class="kale-bolum-baslik">Kalenin Tarihi</h3>
-    <p>
+      <h5 class="mt-4 mb-3">Kalenin Mimari Özellikleri:</h5>
+      <ul class="list-group list-group-flush mb-4">
+        <li class="list-group-item">Kaba yönü taş kullanılarak yığma teknikle inşa edilmiş surlar</li>
+        <li class="list-group-item">Gözetleme kuleleri</li>
+        <li class="list-group-item">Su sarnıçları ve kuyular</li>
+        <li class="list-group-item">Kayalara oyulmuş mağaralar ve odalar</li>
+        <li class="list-group-item">Oturma sekileri ve nişler bulunan freskli odalar</li>
+      </ul>
+      
+<div class="text-center mb-3">
+  <img src="mirasimiz/kalesurlari.jpg" 
+       alt="Giresun Kalesi'nden manzara" 
+       class="w-100 rounded shadow-sm" 
+       style="max-height: 350px; object-fit: cover;" />
+</div>
+
+    </section>
+
+    <!-- Kalenin Tarihi -->
+    <section class="mb-5">
+      <h3 class="mb-4 border-bottom pb-2">Kalenin Tarihi</h3>
+      <p>
         Giresun Kalesi'nin kökeni antik dönemlere kadar uzanmaktadır.
         Çeşitli kaynaklar kalenin MÖ 2. yüzyılda Pontus Kralı I. Farnakes (MÖ 190-169) tarafından inşa ettirildiğini belirtmektedir.
-        Ancak Giresun Adası'nda yapılan kazılarda bulunan arkeolojik buluntular,
-        bölgedeki yerleşimin Arkaik Dönem'e (MÖ 1050-600) kadar uzandığını göstermektedir.
-    </p>
-
-   <div class="tarih-kart-baslik">Kale, tarih boyunca önemli bir savunma yapısı olarak kullanılmıştır:</div>
-    <div class="tarih-timeline">
-        <div class="tarih-kart">
-            <span class="tarih-yil">Roma Dönemi</span>
-            <p>Helenistik ve Roma izleri taşıyan sur kalıntıları bulunmaktadır.</p>
-        </div>
-        <div class="tarih-kart">
-            <span class="tarih-yil">Bizans Dönemi</span>
-            <p>Trabzon Rum İmparatorluğu'nun Türklere karşı son sınır kalelerinden biri olmuştur.</p>
-        </div>
-        <div class="tarih-kart">
-            <span class="tarih-yil">1301</span>
-            <p>Trabzon İmparatoru II. Aleksios tarafından onarılmıştır.</p>
-        </div>
-        <div class="tarih-kart">
-            <span class="tarih-yil">14. yüzyıl</span>
-            <p>Çepni Türkmenleri tarafından ele geçirilmiştir.</p>
-        </div>
-        <div class="tarih-kart">
-            <span class="tarih-yil">1461</span>
-            <p>Fatih Sultan Mehmet'in Trabzon'u fethiyle kalıcı olarak Osmanlı hakimiyetine girmiştir.</p>
-        </div>
-    </div>
-
-    <p>
-        Kale, Aristoteles ve Neofitos gibi tarihçiler tarafından <strong>"yüksek duvarlı, savunması iyi ve alınması güç bir kale"</strong> olarak tanımlanmıştır.
+        Ancak Giresun Adası'nda yapılan kazılarda bulunan arkeolojik buluntular, bölgedeki yerleşimin Arkaik Dönem'e (MÖ 1050-600) kadar uzandığını göstermektedir.
+      Kale, Aristoteles ve Neofitos gibi tarihçiler tarafından
+        <strong>"yüksek duvarlı, savunması iyi ve alınması güç bir kale"</strong> olarak tanımlanmıştır.
         Bu savunma gücü sayesinde Giresun, tarihte "kurtuluş günü olmayan nadir şehirlerden" biri olarak anılmaktadır.
-    </p>
-</section>
+      </p>
 
-<section class="kale-bolum">
-  <h3 class="kale-bolum-baslik">Kalede Bulunan Önemli Unsurlar</h3>
-  <p>
-    Sur duvarları, taş işçiliği ve çeşitli dönemlerde yapılan restorasyonlarla kale günümüze kadar ulaşmıştır.
-  </p>
+      <h5 class="mt-4 mb-3">Kale, tarih boyunca önemli bir savunma yapısı olarak kullanılmıştır:</h5>
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <div class="card h-100 shadow-sm kale-kart ">
+            <div class="card-body">
+              <h6 class="card-subtitle mb-2 text-muted">Roma Dönemi</h6>
+              <p class="card-text">Helenistik ve Roma izleri taşıyan sur kalıntıları bulunmaktadır.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 shadow-sm kale-kart">
+            <div class="card-body">
+              <h6 class="card-subtitle mb-2 text-muted">Bizans Dönemi</h6>
+              <p class="card-text">Trabzon Rum İmparatorluğu'nun Türklere karşı son sınır kalelerinden biri olmuştur.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 shadow-sm kale-kart">
+            <div class="card-body">
+              <h6 class="card-subtitle mb-2 text-muted">1301</h6>
+              <p class="card-text">Trabzon İmparatoru II. Aleksios tarafından onarılmıştır.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 shadow-sm kale-kart">
+            <div class="card-body">
+              <h6 class="card-subtitle mb-2 text-muted">14. yüzyıl</h6>
+              <p class="card-text">Çepni Türkmenleri tarafından ele geçirilmiştir.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 shadow-sm kale-kart">
+            <div class="card-body">
+              <h6 class="card-subtitle mb-2 text-muted">1461</h6>
+              <p class="card-text">Fatih Sultan Mehmet'in Trabzon'u fethiyle kalıcı olarak Osmanlı hakimiyetine girmiştir.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 shadow-sm kale-kart">
+            <div class="card-body">
+              <h6 class="card-subtitle mb-2 text-muted">Günümüz</h6>
+              <p class="card-text">Kale savunma amacından çıkmış, piknik merkezi haline gelmiştir.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Önemli Unsurlar -->
+    <section class="mb-5">
+      <h3 class="mb-4 border-bottom pb-2">Kalede Bulunan Önemli Unsurlar</h3>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="card h-100 shadow-sm">
+            <img src="mirasimiz/topalosman.jpg" class="card-img-top" alt="Topal Osman Anıtı" />
+            <div class="card-body">
+              <h5 class="card-title">Topal Osman Anıtı</h5>
+              <p class="card-text">Kurtuluş Savaşı kahramanı Topal Osman'ın anısına dikilen bu anıt, yerli halk için kalede önemli bir yere sahiptir.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card h-100 shadow-sm">
+            <img src="mirasimiz/sehitlik.jpg" class="card-img-top" alt="Şehitlik" />
+            <div class="card-body">
+              <h5 class="card-title">Şehitlik</h5>
+              <p class="card-text">Kurtuluş Savaşındaki Giresunlu şehitlerimizi anmak için yapılan bu yapı, milli bayramlarda oldukça ilgi görmektedir.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <div class="kale-grid">
-    <div class="kale-kart">
-      <h3 class="kale-alt-baslik">Topal Osman Anıtı</h3>
-      <img src="mirasimiz/topalosman.jpg" alt="Topal Osman Anıtı">
-      <p>Kurtuluş Savaşı kahramanı Topal Osman'ın anısına dikilen bu anıt, kalede önemli bir yere sahiptir.</p>
-    </div>
-
-    <div class="kale-kart">
-      <h3 class="kale-alt-baslik">Şehitlik</h3>
-      <img src="mirasimiz/sehitlik.jpg" alt="Şehitlik">
-      <p>Kurtuluş Savaşı kahramanı Topal Osman'ın anısına dikilen bu anıt, kalede önemli bir yere sahiptir.</p>
-    </div>
-  </div>
-</section>
-
-
-
-
-<section class="kale-bolum">
-    <h3 class="kale-bolum-baslik">Günümüzde Giresun Kalesi</h3>
-    <p>
+    <!-- Günümüzde Giresun Kalesi -->
+    <section class="mb-5">
+      <h3 class="mb-4 border-bottom pb-2">Günümüzde Giresun Kalesi</h3>
+      <p>
         Giresun Kalesi günümüzde sadece tarihi bir yapı olarak değil,
         aynı zamanda aktif olarak kullanılan bir mesire yeri ve gezi alanıdır.
         Belediye tarafından yapılan düzenlemelerle kalenin turistik cazibesi artırılmıştır. 
         Ağaçlarla kaplı doğal piknik alanları, seyir teraslarından şehir manzarası, parke yürüyüş yolları ve patikalar,
         gece aydınlatılan surlar, "Giresun" yazısı ve yapılan daha birçok düzenlemelerle kale Giresun'un gözde turistik mekanlarından biri olmuştur ve
         ziyaretçi sayısı son iki ayda 200 bine çıkarmayı başarmıştır.
-       
-    </p>
-      <img src="mirasimiz/gunumuzkale.jpg" alt="Kale">
-</section>
-
-
-<section class="kale-bolum">
-    <h3 class="kale-bolum-baslik">Giresun Kalesi Konumu</h3>
-    <div class="harita-kapsayici">
-  <iframe 
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.5793515107604!2d38.38925891542092!3d40.91285307931113!2m3!1f0!2f0!3f45!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4071a5b87fbd9a01%3A0xf1d8df24b67d165c!2sGiresun%20Kalesi!5e1!3m2!1str!2str!4v1650000000000" 
-    width="100%" 
-    height="500" 
-    style="border:0;" 
-    allowfullscreen="" 
-    loading="lazy" 
-    referrerpolicy="no-referrer-when-downgrade">
-  </iframe>
+      </p>
+      <div class="text-center mb-3">
+  <img src="mirasimiz/gunumuzkale.jpg" 
+       alt="Giresun Kalesi'nden manzara" 
+       class="w-100 rounded shadow-sm" 
+       style="max-height: 350px; object-fit: cover;" />
 </div>
-</section>
+    </section>
 
+    <!-- Konum -->
+    <section>
+      <h3 class="mb-4 border-bottom pb-2">Giresun Kalesi Konumu</h3>
+      <div class="ratio ratio-16x9 shadow rounded">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.5793515107604!2d38.38925891542092!3d40.91285307931113!2m3!1f0!2f0!3f45!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4071a5b87fbd9a01%3A0xf1d8df24b67d165c!2sGiresun%20Kalesi!5e1!3m2!1str!2str!4v1650000000000"
+          style="border:0; border-radius: 10px;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Giresun Kalesi Haritası"
+        ></iframe>
+      </div>
+    </section>
 
-
-        <p>
-            Daha fazla bilgi için: 
-            <a class="mirasimiz-link" href="https://giresun.ktb.gov.tr/TR-243492/giresun-kalesi.html" target="_blank">Giresun İl Kültür ve Turizm Müdürlüğü'ne göre Giresun Kalesi</a>.
-        </p>
-    </main>
-
-
-
-    <footer>
-        &copy; Yaren Naz Kahyaoğlu - <a class="active" href="#">Giriş Yap</a>
-    </footer>
-
-
-
+    <p class="mt-4">
+      Daha fazla bilgi için: 
+      <a class="text-decoration-none" href="https://giresun.ktb.gov.tr/TR-243492/giresun-kalesi.html" target="_blank" rel="noopener noreferrer">Giresun İl Kültür ve Turizm Müdürlüğü'ne göre Giresun Kalesi</a>.
+    </p>
+  </main>
+   <footer class="bg-dark text-white text-center py-4">
+    <div class="container">
+      <small>© 2025 Yaren Naz Kahyaoğlu. Tüm hakları saklıdır.</small>
+    </div>
+  </footer>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
